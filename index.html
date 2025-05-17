@@ -211,6 +211,34 @@
             margin-bottom: 0.3rem;
          }
 
+         /* Header layout using flexbox */
+         .resume-header {
+            display: flex;
+            justify-content: space-between; /* Push content to ends */
+            align-items: center; /* Vertically align items */
+            margin-bottom: 1.5rem; /* Adjusted margin */
+            padding: 0 1rem; /* Added horizontal padding */
+         }
+
+         .header-left {
+             text-align: left; /* Align name and location to the left */
+         }
+
+         .header-right {
+             text-align: right; /* Align email to the right */
+             font-size: 1rem;
+             color: #4b5563; /* gray-600 */
+         }
+
+         .header-right a {
+             color: #4b5563; /* Match text color for link */
+             text-decoration: none; /* Remove underline */
+         }
+
+         .header-right a:hover {
+             text-decoration: underline; /* Add underline on hover */
+         }
+
 
         /* Print specific styles */
         @media print {
@@ -266,6 +294,29 @@
              .previous-experience-details ul { margin-left: 1rem; font-size: 9pt; }
              .previous-experience-details li { margin-bottom: 0.2rem; }
 
+             /* Print specific header layout */
+             .resume-header {
+                 display: flex;
+                 justify-content: space-between;
+                 align-items: center;
+                 margin-bottom: 1rem; /* Adjusted margin for print */
+                 padding: 0; /* Remove padding for print */
+             }
+             .header-left, .header-right {
+                 text-align: left; /* Align both left for print */
+                 font-size: 10pt; /* Adjust font size for print */
+             }
+             .header-right {
+                 margin-left: 1rem; /* Add some space between name/location and email */
+             }
+             .header-left h1 {
+                 font-size: 18pt; /* Adjust h1 size for print header */
+                 margin-bottom: 0.1rem;
+             }
+             .header-left p {
+                 font-size: 10pt; /* Adjust location font size for print header */
+                 margin-bottom: 0;
+             }
 
         }
 
@@ -275,10 +326,16 @@
 
     <div class="resume-container">
 
-        <header class="text-center mb-6">
-            <h1 class="text-4xl">Thomas Loftus III</h1>
-            <p class="contact-info">Charlotte, NC</p>
+        <header class="resume-header">
+            <div class="header-left">
+                <h1 class="text-4xl">Thomas Loftus III</h1>
+                <p class="contact-info">Charlotte, NC</p>
+            </div>
+            <div class="header-right">
+                <a href="mailto:thomasloftus2@gmail.com">thomasloftus2@gmail.com</a>
+            </div>
         </header>
+
 
         <section class="section">
             <h2>Professional Summary</h2>
