@@ -71,21 +71,23 @@
         }
 
         .core-competencies ul {
-            list-style: none;
+            list-style: none; /* Remove default list styling */
             padding: 0;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
             gap: 0.75rem;
         }
 
-        /* Simplified styling for Core Competencies list items */
+        /* Simplified styling for Core Competencies list items - removed bullet styles */
         .core-competencies li {
             background-color: var(--card-bg);
             padding: 0.75rem 1rem; /* Keep padding */
             border-radius: 0.25rem; /* Keep rounded corners */
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Keep small shadow for separation */
             border: 1px solid #d1d5db; /* Subtle border for definition */
+             margin-left: 0; /* Ensure no left margin from list style */
         }
+
 
         .achievements ul {
             list-style: disc;
@@ -131,21 +133,26 @@
             margin-bottom: 0.5rem;
         }
 
-        .technical-skills div {
+        /* Technical Skills layout */
+        .technical-skills .space-y-2 > div {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            flex-wrap: wrap; /* Allow wrapping */
+            gap: 0.25rem; /* Reduced gap for items within a category */
+            align-items: baseline; /* Align text baselines */
         }
 
         .skill-category {
             font-weight: bold;
             margin-right: 0.5rem;
             color: var(--primary-dark);
+            flex-shrink: 0; /* Prevent category name from shrinking */
         }
 
         .skill-list {
             color: #374151; /* gray-700 */
+            flex-grow: 1; /* Allow skill list to take available space */
         }
+
 
          .education-entry {
             margin-bottom: 1rem;
@@ -273,6 +280,8 @@
                  box-shadow: none;
                  font-size: 9pt;
                  border: 1px solid #d1d5db; /* Keep subtle border for print */
+                  list-style: none; /* Ensure no list style for print */
+                  margin-left: 0; /* Ensure no margin for print */
              }
              .achievements ul { margin-left: 1rem; font-size: 10pt; }
              .achievements li { margin-bottom: 0.5rem; }
@@ -354,9 +363,10 @@
                 <li>Workflow Modernization & Accountability Readiness</li>
                 <li>Knowledge Base Development & Resource Documentation Management</li>
                 <li>System Performance Monitoring & Enhancement Recommendations</li>
-                <li>State & Local Tax Income Tax (SALT) & Employer Tax Expert</li>
                 <li>Quality Assurance Audit & Client Success</li>
-                <li>Process Improvement & Automation</li> </ul>
+                <li>Process Improvement & Automation</li>
+                <li>State & Local Tax Income Tax (SALT) & Employer Tax Expert</li>
+            </ul>
         </section>
 
         <section class="section achievements">
@@ -365,7 +375,7 @@
                 <li>Ensured Operational Continuity: Stepped into multiple departmental roles during major organizational transitions, ensuring uninterrupted service delivery and compliance.</li>
                 <li>Modernized Workflows for Agility: Spearheaded digital transformation initiatives including process automation, digital controls, and paper reduction—cutting processing time, reducing errors, and enabling leaner operations.</li>
                 <li>Strengthened Risk & Compliance Controls: Streamlined account setup and documentation processes to improve standardization, reduce compliance risk, and support growth.</li>
-                <li>Empowered Data-Driven Leadership: Designed and implemented reporting frameworks, enhancing visibility into operational metrics and supporting agile decision-making at the leadership level.</li>
+                <li>Empowered Data-Driven Leadership: Designed and implemented reporting frameworks, enhancing visibility into operational metrics and supporting agile decision-decision-making at the leadership level.</li>
             </ul>
         </section>
 
@@ -421,7 +431,7 @@
                 <div class="experience-details">
                     <ul>
                         <li>Collaborated closely with the Human Resources Director in the redevelopment of the employee handbook, aligning it more closely with the firm’s culture.</li>
-                        <li>Familiarized myself with the handbook and provided project efficiency recommendations.</li>
+                        <li>Familiarized with the handbook and provided project efficiency recommendations.</li>
                         <li>Conducted research and recommended industry-specific trends and examples from leading organizations.</li>
                     </ul>
                 </div>
@@ -431,20 +441,31 @@
 
         <section class="section technical-skills">
             <h2>Technical Skills</h2>
-            <div>
-                <span class="skill-category">CRM & Compliance:</span> <span class="skill-list">ZenDesk (Admin), Symmetry Tax, QuickBooks, IRS TIN Matching, EFTPS, State/Local Tax Portals, Preparer Tax Identification Number (PTIN), E-Verify (agent)</span>
-            </div>
-             <div>
-                <span class="skill-category">SaaS & Workflow:</span> <span class="skill-list">Asana, ShareFile, Trello, Adobe Acrobat EchoSign, HubSpot, Zoho</span>
-            </div>
-             <div>
-                <span class="skill-category">Data Tools:</span> <span class="skill-list">Microsoft Excel (pivot tables, formulas, large complex datasets), Access, pgAdmin, SQL</span>
-            </div>
-             <div>
-                <span class="skill-category">Project Support:</span> <span class="skill-list">JIRA, SLA monitoring, annual tax compliance knowledge base documentation</span>
-            </div>
-             <div>
-                <span class="skill-category">Productivity:</span> <span class="skill-list">Microsoft Office Suite (Word, Outlook, Teams), Google Suite, Adobe Suite, MacOS</span>
+            <div class="space-y-2">
+                <div>
+                    <span class="skill-category">CRM & Support Platforms:</span>
+                    <span class="skill-list">ZenDesk (Admin), HubSpot, Zoho, QuickBooks</span>
+                </div>
+                 <div>
+                    <span class="skill-category">Project & Workflow Management:</span>
+                    <span class="skill-list">Asana, Trello, JIRA, SLA Monitoring, Microsoft Teams, Slack</span>
+                </div>
+                 <div>
+                    <span class="skill-category">Data Management & Analysis:</span>
+                    <span class="skill-list">Microsoft Excel (large complex datasets), Microsoft Access, SQL, pgAdmin</span>
+                </div>
+                 <div>
+                    <span class="skill-category">Payroll & Compliance Tools:</span>
+                    <span class="skill-list">Symmetry Tax, IRS TIN Matching, EFTPS, State/Local Tax Portals, PTIN, E-Verify</span>
+                </div>
+                 <div>
+                    <span class="skill-category">Documentation & E-Signature:</span>
+                    <span class="skill-list">ShareFile, Adobe  EchoSign, Microsoft Office Suite, Google Suite </span>
+                </div>
+                 <div>
+                    <span class="skill-category">System Integration & Development Tools:</span>
+                    <span class="skill-list">Azure, Xcode, Mermaid, LucidCharts, Draw.io, GitHub</span>
+                </div>
             </div>
         </section>
 
