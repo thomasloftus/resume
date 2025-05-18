@@ -27,7 +27,7 @@
 
         .resume-container {
             max-width: 800px; /* Max width for a standard resume layout */
-            width: 100%;
+            width: 100%; /* Ensure it takes full width on smaller screens */
             background-color: var(--card-bg); /* Container provides the main background */
             padding: 2rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Medium shadow */
@@ -60,11 +60,6 @@
         }
 
         /* Specific adjustment for Education section margin */
-        /* Using a more robust selector than :has() for broader compatibility */
-        .section h2:contains("Education") {
-             margin-bottom: 1.5rem; /* Reduced margin below the heading within the section */
-        }
-
         .section:has(h2:contains("Education")) {
              margin-bottom: 1.5rem; /* Reduced margin for the entire Education section */
         }
@@ -73,8 +68,6 @@
         .contact-info {
             font-size: 1rem;
             color: #4b5563; /* gray-600 */
-            /* Removed bottom margin as it's now part of the header-left div */
-            /* margin-bottom: 1.5rem; */
         }
 
         .summary-text {
@@ -146,24 +139,34 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Technical Skills layout */
-        .technical-skills .space-y-2 > div {
+        /* Technical Skills layout - Card Grid */
+        .technical-skills .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid for cards */
+            gap: 1rem; /* Gap between cards */
+        }
+
+        .technical-skills .skill-card {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Small shadow */
+            border: 1px solid #d1d5db; /* Subtle border */
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping */
-            gap: 0.25rem; /* Reduced gap for items within a category */
-            align-items: baseline; /* Align text baselines */
+            flex-direction: column;
         }
 
-        .skill-category {
+        .technical-skills .skill-category-title {
             font-weight: bold;
-            margin-right: 0.5rem;
             color: var(--primary-dark);
-            /* Removed flex-shrink: 0; to allow wrapping */
+            margin-bottom: 0.5rem; /* Space below title */
+            font-size: 1rem; /* Reduced font size */
         }
 
-        .skill-list {
+        .technical-skills .skill-list-items {
             color: #374151; /* gray-700 */
-            flex-grow: 1; /* Allow skill list to take available space */
+            font-size: 0.9rem; /* Slightly smaller text for list items */
+            line-height: 1.4; /* Adjusted line height */
         }
 
 
@@ -234,34 +237,23 @@
          /* Header layout using flexbox */
          .resume-header {
             display: flex;
-            justify-content: space-between; /* Push content to ends */
-            align-items: center; /* Vertically align items */
+            flex-direction: column; /* Stack items vertically on small screens */
+            align-items: flex-start; /* Align items to the start */
             margin-bottom: 1.5rem; /* Adjusted margin */
-            padding: 0 1rem; /* Added horizontal padding */
-            padding-left: 1.5rem; /* Added left padding to align with sections */
+            padding: 0 1.5rem; /* Consistent horizontal padding with sections */
          }
 
          .header-left {
              text-align: left; /* Align name and location to the left */
          }
 
-         /* Removed header-right styling */
-         /* .header-right {
-             text-align: right;
-             font-size: 1rem;
-             color: #4b5563;
-         }
-
-         .header-right a {
-             color: #4b5563;
-             text-decoration: none;
-         }
-
-         .header-right a:hover {
-             text-decoration: underline;
-         } */
-
          /* New Contact Section Styling */
+         .contact-section .space-y-2 {
+            display: flex; /* Use flexbox for contact links */
+            flex-direction: column; /* Stack links vertically */
+            align-items: flex-start; /* Align links to the start */
+         }
+
          .contact-section .space-y-2 a {
              color: var(--secondary-accent); /* Blue link color */
              text-decoration: none; /* No underline by default */
@@ -271,102 +263,7 @@
              text-decoration: underline; /* Underline on hover */
          }
 
-
-        /* Print specific styles */
-        @media print {
-            body {
-                background-color: #fff;
-                padding: 0;
-                margin: 0;
-                display: block;
-            }
-            .resume-container {
-                max-width: none;
-                width: 100%;
-                padding: 0;
-                box-shadow: none;
-                border-radius: 0;
-            }
-            .section {
-                box-shadow: none;
-                background-color: #fff;
-                padding: 1rem 0; /* Adjust padding for print */
-                margin-bottom: 1rem; /* Adjust margin for print */
-                border-radius: 0;
-            }
-             h1 { font-size: 20pt; margin-bottom: 0.3rem; }
-             h2 { font-size: 14pt; margin-bottom: 0.7rem; padding-bottom: 0.3rem; border-bottom-width: 1px; }
-             .contact-info { font-size: 10pt; margin-bottom: 1rem; }
-             .summary-text { font-size: 10pt; margin-bottom: 1rem; }
-             .core-competencies ul { gap: 0.5rem; }
-             .core-competencies li {
-                 padding: 0.5rem 0.7rem;
-                 border-radius: 0;
-                 box-shadow: none;
-                 font-size: 9pt;
-                 border: 1px solid #d1d5db; /* Keep subtle border for print */
-                  list-style: none; /* Ensure no list style for print */
-                  margin-left: 0; /* Ensure no margin for print */
-             }
-             .achievements ul {
-                 list-style: none; /* Remove bullet points for print */
-                 margin-left: 0; /* Remove margin for print */
-             }
-             .achievements li { margin-bottom: 0.5rem; }
-             .experience-entry { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom-width: 1px; }
-             .job-title { font-size: 11pt; margin-bottom: 0.1rem; }
-             .company-info { font-size: 10pt; margin-bottom: 0.5rem; }
-             .experience-details ul { margin-left: 1rem; font-size: 10pt; }
-             .experience-details li { margin-bottom: 0.3rem; }
-             .technical-skills div { gap: 0.3rem; }
-             .skill-category { font-size: 10pt; margin-right: 0.3rem; }
-             .skill-list { font-size: 10pt; }
-             .education-entry {
-                 margin-bottom: 0.5rem; /* Reduced margin for print */
-                 padding-bottom: 0.5rem; /* Reduced padding for print */
-                 border-bottom-width: 1px;
-             }
-             .degree { font-size: 11pt; margin-bottom: 0.1rem; }
-             .university-info { font-size: 10pt; margin-bottom: 0.5rem; }
-             .previous-experience-summary { font-size: 10pt; margin-bottom: 1rem; }
-             .previous-experience-entry { margin-bottom: 0.7rem; padding-bottom: 0.7rem; border-bottom-width: 1px; }
-             .previous-job-title { font-size: 10pt; margin-bottom: 0.1rem; }
-             .previous-company-info { font-size: 9pt; margin-bottom: 0.3rem; }
-             .previous-experience-details ul { margin-left: 1rem; font-size: 9pt; }
-             .previous-experience-details li { margin-bottom: 0.2rem; }
-
-             /* Print specific header layout */
-             .resume-header {
-                 display: block; /* Stack elements for print */
-                 text-align: center; /* Center header content for print */
-                 margin-bottom: 1rem; /* Adjusted margin for print */
-                 padding: 0; /* Remove padding for print */
-             }
-             .header-left, .header-right {
-                 text-align: center; /* Center text for print */
-                 font-size: 10pt; /* Adjust font size for print */
-                 margin: 0; /* Remove margins for print */
-             }
-             .header-left h1 {
-                 font-size: 18pt; /* Adjust h1 size for print header */
-                 margin-bottom: 0.1rem;
-             }
-             .header-left p {
-                 font-size: 10pt; /* Adjust location font size for print header */
-                 margin-bottom: 0;
-             }
-             /* Print specific contact section styling */
-             .contact-section .space-y-2 {
-                 text-align: center; /* Center contact info for print */
-             }
-             .contact-section .space-y-2 a {
-                 color: #000; /* Black link color for print */
-                 text-decoration: none; /* No underline for print */
-                 font-size: 9pt; /* Adjust font size for print */
-             }
-
-
-        }
+        /* Removed all @media print styles */
 
     </style>
 </head>
@@ -379,7 +276,7 @@
                 <h1 class="text-4xl">Thomas Loftus</h1>
                 <p class="contact-info">Charlotte, NC</p>
             </div>
-            </header>
+        </header>
 
 
         <section class="section">
@@ -477,30 +374,30 @@
 
         <section class="section technical-skills">
             <h2>Technical Skills</h2>
-            <div class="space-y-2">
-                <div>
-                    <span class="skill-category">CRM & Support Platforms:</span>
-                    <span class="skill-list">Microsoft Access, Zendesk (Admin), HubSpot, Zoho, QuickBooks</span>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-category-title">CRM & Support Platforms:</div>
+                    <div class="skill-list-items">Microsoft Access, Zendesk (Admin), HubSpot, Zoho, QuickBooks</div>
                 </div>
-                 <div>
-                    <span class="skill-category">System Integration & Development Tools:</span>
-                    <span class="skill-list">Azure, Xcode, Mermaid, Draw.io, GitHub</span>
+                 <div class="skill-card">
+                    <div class="skill-category-title">System Integration & Development Tools:</div>
+                    <div class="skill-list-items">Azure, Xcode, Mermaid, Draw.io, GitHub</div>
                 </div>
-                 <div>
-                    <span class="skill-category">Project & Workflow Management:</span>
-                    <span class="skill-list">Asana, Trello, JIRA, SLA Monitoring, Microsoft Teams, Slack</span>
+                 <div class="skill-card">
+                    <div class="skill-category-title">Project & Workflow Management:</div>
+                    <div class="skill-list-items">Asana, Trello, JIRA, SLA Monitoring, Microsoft Teams, Slack</div>
                 </div>
-                 <div>
-                    <span class="skill-category">Data Management & Analysis:</span>
-                    <span class="skill-list">Microsoft Excel (large complex datasets), SQL, pgAdmin</span>
+                 <div class="skill-card">
+                    <div class="skill-category-title">Data Management & Analysis:</div>
+                    <div class="skill-list-items">SQL, pgAdmin, Visio, Microsoft Excel (large complex datasets)</div>
                 </div>
-                 <div>
-                    <span class="skill-category">Documentation & E-Signature:</span>
-                    <span class="skill-list">Adobe EchoSign, ShareFile, Microsoft Office Suite, Google Suite </span>
+                 <div class="skill-card">
+                    <div class="skill-category-title">E-Signature and Documentation:</div>
+                    <div class="skill-list-items">Adobe EchoSign, ShareFile, Microsoft Office Suite, Google Suite </div>
                 </div>
-                 <div>
-                    <span class="skill-category">Payroll & Compliance Tools:</span>
-                    <span class="skill-list">Symmetry Tax, IRS TIN Matching, EFTPS, Tax Agent Portals, PTIN, E-Verify</span>
+                 <div class="skill-card">
+                    <div class="skill-category-title">Payroll & Compliance Tools:</div>
+                    <div class="skill-list-items">Symmetry Tax, IRS TIN Matching, EFTPS, Tax Agent Portals, PTIN, E-Verify</div>
                 </div>
             </div>
         </section>
