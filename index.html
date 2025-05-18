@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Loftus III - Resume</title>
+    <title>Thomas Loftus - Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles for professional color palette, soft shadows, and rounded corners */
@@ -102,8 +102,9 @@
 
 
         .achievements ul {
-            list-style: disc;
-            margin-left: 1.25rem; /* pl-5 */
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+            margin-left: 0; /* Remove default margin */
             color: #374151; /* gray-700 */
         }
 
@@ -237,6 +238,7 @@
             align-items: center; /* Vertically align items */
             margin-bottom: 1.5rem; /* Adjusted margin */
             padding: 0 1rem; /* Added horizontal padding */
+            padding-left: 1.5rem; /* Added left padding to align with sections */
          }
 
          .header-left {
@@ -261,7 +263,7 @@
 
          /* New Contact Section Styling */
          .contact-section .space-y-2 a {
-             color: #3b82f6; /* Blue link color */
+             color: var(--secondary-accent); /* Blue link color */
              text-decoration: none; /* No underline by default */
          }
 
@@ -306,7 +308,10 @@
                   list-style: none; /* Ensure no list style for print */
                   margin-left: 0; /* Ensure no margin for print */
              }
-             .achievements ul { margin-left: 1rem; font-size: 10pt; }
+             .achievements ul {
+                 list-style: none; /* Remove bullet points for print */
+                 margin-left: 0; /* Remove margin for print */
+             }
              .achievements li { margin-bottom: 0.5rem; }
              .experience-entry { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom-width: 1px; }
              .job-title { font-size: 11pt; margin-bottom: 0.1rem; }
@@ -371,7 +376,7 @@
 
         <header class="resume-header">
             <div class="header-left">
-                <h1 class="text-4xl">Thomas Loftus</h1>
+                <h1 class="text-4xl">Thomas Loftus III</h1>
                 <p class="contact-info">Charlotte, NC</p>
             </div>
             </header>
@@ -403,10 +408,10 @@
         <section class="section achievements">
             <h2>Key Achievements</h2>
             <ul>
-                <li>Ensured Operational Continuity: Stepped into multiple departmental roles during major organizational transitions, ensuring uninterrupted service delivery and compliance.</li>
-                <li>Modernized Workflows for Agility: Spearheaded digital transformation initiatives including process automation, digital controls, and paper reduction—cutting processing time, reducing errors, and enabling leaner operations.</li>
-                <li>Strengthened Risk & Compliance Controls: Streamlined account setup and documentation processes to improve standardization, reduce compliance risk, and support growth.</li>
-                <li>Empowered Data-Driven Leadership: Designed and implemented reporting frameworks, enhancing visibility into operational metrics and supporting agile decision-decision-making at the leadership level.</li>
+                <li><strong>Ensured Operational Continuity:</strong> Stepped into multiple departmental roles during major organizational transitions, ensuring uninterrupted service delivery and compliance.</li>
+                <li><strong>Modernized Workflows for Agility:</strong> Spearheaded digital transformation initiatives including process automation, digital controls, and paper reduction—cutting processing time, reducing errors, and enabling leaner operations.</li>
+                <li><strong>Strengthened Risk & Compliance Controls:</strong> Streamlined account setup and documentation processes to improve standardization, reduce compliance risk, and support growth.</li>
+                <li><strong>Empowered Data-Driven Leadership:</strong> Designed and implemented reporting frameworks, enhancing visibility into operational metrics and supporting agile decision-decision-making at the leadership level.</li>
             </ul>
         </section>
 
