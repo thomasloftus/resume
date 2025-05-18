@@ -62,7 +62,8 @@
         .contact-info {
             font-size: 1rem;
             color: #4b5563; /* gray-600 */
-            margin-bottom: 1.5rem;
+            /* Removed bottom margin as it's now part of the header-left div */
+            /* margin-bottom: 1.5rem; */
         }
 
         .summary-text {
@@ -231,19 +232,30 @@
              text-align: left; /* Align name and location to the left */
          }
 
-         .header-right {
-             text-align: right; /* Align email to the right */
+         /* Removed header-right styling */
+         /* .header-right {
+             text-align: right;
              font-size: 1rem;
-             color: #4b5563; /* gray-600 */
+             color: #4b5563;
          }
 
          .header-right a {
-             color: #4b5563; /* Match text color for link */
-             text-decoration: none; /* Remove underline */
+             color: #4b5563;
+             text-decoration: none;
          }
 
          .header-right a:hover {
-             text-decoration: underline; /* Add underline on hover */
+             text-decoration: underline;
+         } */
+
+         /* New Contact Section Styling */
+         .contact-section .space-y-2 a {
+             color: #3b82f6; /* Blue link color */
+             text-decoration: none; /* No underline by default */
+         }
+
+         .contact-section .space-y-2 a:hover {
+             text-decoration: underline; /* Underline on hover */
          }
 
 
@@ -305,18 +317,15 @@
 
              /* Print specific header layout */
              .resume-header {
-                 display: flex;
-                 justify-content: space-between;
-                 align-items: center;
+                 display: block; /* Stack elements for print */
+                 text-align: center; /* Center header content for print */
                  margin-bottom: 1rem; /* Adjusted margin for print */
                  padding: 0; /* Remove padding for print */
              }
              .header-left, .header-right {
-                 text-align: left; /* Align both left for print */
+                 text-align: center; /* Center text for print */
                  font-size: 10pt; /* Adjust font size for print */
-             }
-             .header-right {
-                 margin-left: 1rem; /* Add some space between name/location and email */
+                 margin: 0; /* Remove margins for print */
              }
              .header-left h1 {
                  font-size: 18pt; /* Adjust h1 size for print header */
@@ -326,6 +335,16 @@
                  font-size: 10pt; /* Adjust location font size for print header */
                  margin-bottom: 0;
              }
+             /* Print specific contact section styling */
+             .contact-section .space-y-2 {
+                 text-align: center; /* Center contact info for print */
+             }
+             .contact-section .space-y-2 a {
+                 color: #000; /* Black link color for print */
+                 text-decoration: none; /* No underline for print */
+                 font-size: 9pt; /* Adjust font size for print */
+             }
+
 
         }
 
@@ -340,10 +359,7 @@
                 <h1 class="text-4xl">Thomas Loftus III</h1>
                 <p class="contact-info">Charlotte, NC</p>
             </div>
-            <div class="header-right">
-                <a href="mailto:thomasloftus2@gmail.com">thomasloftus2@gmail.com</a>
-            </div>
-        </header>
+            </header>
 
 
         <section class="section">
@@ -361,10 +377,10 @@
                 <li>Cross-functional Collaboration & Strategic Partner Relations</li>
                 <li>Risk Protocol Implementation & Procedure Optimization</li>
                 <li>Workflow Modernization & Accountability Readiness</li>
-                <li>Knowledge Base Development & Resource Documentation Management</li>
-                <li>System Performance Monitoring & Enhancement Recommendations</li>
                 <li>Quality Assurance Audit & Client Success</li>
+                <li>System Performance Monitoring & Enhancement Recommendations</li>
                 <li>Process Improvement & Automation</li>
+                <li>Knowledge Base Development & Resource Documentation Management</li>
                 <li>State & Local Tax Income Tax (SALT) & Employer Tax Expert</li>
             </ul>
         </section>
@@ -444,7 +460,11 @@
             <div class="space-y-2">
                 <div>
                     <span class="skill-category">CRM & Support Platforms:</span>
-                    <span class="skill-list">ZenDesk (Admin), HubSpot, Zoho, QuickBooks</span>
+                    <span class="skill-list">Microsoft Access, Zendesk (Admin), HubSpot, Zoho, QuickBooks</span>
+                </div>
+                 <div>
+                    <span class="skill-category">System Integration & Development Tools:</span>
+                    <span class="skill-list">Azure, Xcode, Mermaid, Draw.io, GitHub</span>
                 </div>
                  <div>
                     <span class="skill-category">Project & Workflow Management:</span>
@@ -452,19 +472,15 @@
                 </div>
                  <div>
                     <span class="skill-category">Data Management & Analysis:</span>
-                    <span class="skill-list">Microsoft Excel (large complex datasets), Microsoft Access, SQL, pgAdmin</span>
-                </div>
-                 <div>
-                    <span class="skill-category">Payroll & Compliance Tools:</span>
-                    <span class="skill-list">Symmetry Tax, IRS TIN Matching, EFTPS, State/Local Tax Portals, PTIN, E-Verify</span>
+                    <span class="skill-list">Microsoft Excel (large complex datasets), SQL, pgAdmin</span>
                 </div>
                  <div>
                     <span class="skill-category">Documentation & E-Signature:</span>
-                    <span class="skill-list">ShareFile, Adobe  EchoSign, Microsoft Office Suite, Google Suite </span>
+                    <span class="skill-list">Adobe EchoSign, ShareFile, Microsoft Office Suite, Google Suite </span>
                 </div>
                  <div>
-                    <span class="skill-category">System Integration & Development Tools:</span>
-                    <span class="skill-list">Azure, Xcode, Mermaid, LucidCharts, Draw.io, GitHub</span>
+                    <span class="skill-category">Payroll & Compliance Tools:</span>
+                    <span class="skill-list">Symmetry Tax, IRS TIN Matching, EFTPS, Tax Agent Portals, PTIN, E-Verify</span>
                 </div>
             </div>
         </section>
@@ -506,9 +522,9 @@
                 <p class="previous-company-info">FlowWine, Inc., Fairfax, VA &mdash; April 2012 – August 2012</p>
                  <div class="previous-experience-details">
                     <ul>
-                        <li>Showcased wine brands at public and private events.</li>
+                        <li>Coordinated with brand representatives and event coordinators to align on goals, share insights, and deliver a unified and effective event experience.</li>
+                        <li>Utilized Salesforce to maintain inventory and executed sales reporting.</li>
                         <li>Executed effective suggestive selling techniques.</li>
-                        <li>Maintained and executed sales reporting using SalesForce software.</li>
                     </ul>
                 </div>
             </div>
@@ -519,8 +535,7 @@
                  <div class="previous-experience-details">
                     <ul>
                         <li>Wine & Spirit Education Trust (WSET) Certification Level 2.</li>
-                        <li>Led and functionally supervised a team of Sales Associates, up to 10 persons.</li>
-                        <li>Trained Sales Associates and performed store procedures.</li>
+                        <li>Led team by coordinating roles, resolving conflicts, and ensuring smooth cross-functional communication during high-volume events.</li>
                         <li>Maintained current and accurate knowledge of current and future products.</li>
                     </ul>
                 </div>
@@ -531,11 +546,22 @@
                 <p class="previous-company-info">Freemason Abbey Restaurant, Norfolk, VA &mdash; May 2008 – December 2009</p>
                  <div class="previous-experience-details">
                     <ul>
-                        <li>Excelled in culinary operations within a fine dining environment, honing time management and multitasking skills under stressful environments.</li>
+                        <li>Collaborated closely with a dynamic team to ensure seamless service to achieve collective goals under stressful environments.</li>
+                        <li>Followed structured preparation procedures to ensure consistent, high-quality product.</li>
+                        <li>Demonstrated excellent time-management and multitasking skills.</li>
                     </ul>
                 </div>
             </div>
 
+         </section>
+
+         <section class="section contact-section">
+            <h2>Contact</h2>
+            <div class="space-y-2">
+                <p><a href="mailto:thomasloftus2@gmail.com">thomasloftus2@gmail.com</a></p>
+                <p><a href="https://www.linkedin.com/in/thomasl609703704" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                <p><a href="https://thomasloftus.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            </div>
          </section>
 
 
@@ -543,3 +569,4 @@
 
 </body>
 </html>
+
