@@ -272,6 +272,11 @@
                 display: block; /* Override flex for print */
                 -webkit-print-color-adjust: exact; /* For background colors to print */
                 color-adjust: exact;
+                transform: scale(0.97); /* Scale down the entire content for print */
+                transform-origin: top left; /* Scale from the top-left corner */
+                width: 100%; /* Ensure width is 100% after scaling */
+                height: auto; /* Adjust height automatically */
+                overflow: hidden; /* Hide any potential scrollbars due to scaling */
             }
             .resume-container {
                 max-width: none;
