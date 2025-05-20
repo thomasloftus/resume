@@ -267,15 +267,17 @@
         @media print {
             body {
                 background-color: #fff;
+                /* Set paper size for US Letter */
+                width: 8.5in;
+                height: 11in;
                 padding: 0.6in 0.5in; /* Increased top and bottom padding for print margins */
                 margin: 0;
                 display: block; /* Override flex for print */
                 -webkit-print-color-adjust: exact; /* For background colors to print */
                 color-adjust: exact;
+                /* Apply scaling to the body */
                 transform: scale(0.97); /* Scale down the entire content for print */
                 transform-origin: top left; /* Scale from the top-left corner */
-                width: 100%; /* Ensure width is 100% after scaling */
-                height: auto; /* Adjust height automatically */
                 overflow: hidden; /* Hide any potential scrollbars due to scaling */
             }
             .resume-container {
@@ -336,6 +338,7 @@
             }
             .technical-skills {
                 page-break-before: always; /* Force page break before Technical Skills */
+                padding-top: 0.2in; /* Added extra padding at the top of Technical Skills section for print */
             }
             .technical-skills .skills-grid {
                 gap: 0.25rem; /* Reduced gap between skill cards */
