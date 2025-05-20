@@ -297,6 +297,7 @@
                 white-space: normal; /* Allow wrapping for print */
                 overflow: visible; /* Don't hide for print */
                 text-overflow: clip; /* No ellipsis for print */
+                text-align: center; /* Center justify title in print mode */
             }
             h2 {
                 font-size: 10pt; /* Further adjusted H2 for print */
@@ -369,6 +370,9 @@
             /* Removed all explicit page-break-after and page-break-inside rules */
 
             /* This will attempt to fit content onto 2 pages by aggressive scaling */
+            .print-button {
+                display: none; /* Hide the print button */
+            }
         }
 
     </style>
