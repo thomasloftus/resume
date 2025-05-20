@@ -287,96 +287,98 @@
             .section {
                 background-color: #fff; /* Ensure white background for sections */
                 box-shadow: none;
-                padding: 0.4rem 1rem; /* Further reduced padding for print margins */
+                padding: 0.3rem 0.8rem; /* Further reduced padding for print margins */
                 margin-bottom: 0; /* Remove margin between sections for page breaks */
                 border-radius: 0;
             }
             h1 {
-                font-size: 18pt; /* Further reduced font for main title in print */
+                font-size: 17pt; /* Further reduced font for main title in print */
                 margin-bottom: 0.1rem; /* Reduced margin */
                 white-space: normal; /* Allow wrapping for print */
                 overflow: visible; /* Don't hide for print */
                 text-overflow: clip; /* No ellipsis for print */
             }
             h2 {
-                font-size: 12pt; /* Further adjusted H2 for print */
-                margin-bottom: 0.3rem; /* Reduced margin */
+                font-size: 11.5pt; /* Further adjusted H2 for print */
+                margin-bottom: 0.25rem; /* Reduced margin */
                 padding-bottom: 0.1rem; /* Reduced padding */
                 border-bottom: 1px solid #d1d5db; /* Lighter border for print */
             }
             p, li, .contact-info, .summary-text, .skill-list-items, .university-info, .previous-experience-summary {
                 font-size: 8pt; /* Even smaller text size for print */
-                line-height: 1.15; /* Tighter line height for print */
+                line-height: 1.1; /* Tighter line height for print */
             }
             .job-title, .degree, .previous-job-title {
-                font-size: 9pt; /* Slightly larger for titles in print */
+                font-size: 8.5pt; /* Slightly larger for titles in print */
             }
             .company-info, .previous-company-info {
-                font-size: 7pt; /* Smaller for company info in print */
+                font-size: 6.5pt; /* Smaller for company info in print */
             }
             .core-competencies li {
-                padding: 0.3rem 0.6rem; /* Reduced padding for competency items */
-                margin-bottom: 0.15rem; /* Reduced margin for competency items */
+                padding: 0.25rem 0.5rem; /* Reduced padding for competency items */
+                margin-bottom: 0.1rem; /* Reduced margin for competency items */
             }
             .achievements li {
-                margin-bottom: 0.3rem; /* Reduced margin for achievement items */
+                margin-bottom: 0.25rem; /* Reduced margin for achievement items */
             }
             .experience-entry {
-                margin-bottom: 0.6rem; /* Reduced margin for experience entries */
-                padding-bottom: 0.6rem; /* Reduced padding */
+                margin-bottom: 0.5rem; /* Reduced margin for experience entries */
+                padding-bottom: 0.5rem; /* Reduced padding */
             }
             .experience-details ul {
-                margin-left: 1rem; /* Reduced margin for experience details ul */
+                margin-left: 0.8rem; /* Reduced margin for experience details ul */
             }
             .experience-details li {
-                margin-bottom: 0.2rem; /* Reduced margin for experience details */
+                margin-bottom: 0.15rem; /* Reduced margin for experience details */
             }
             .technical-skills .skills-grid {
-                gap: 0.7rem; /* Reduced gap between skill cards */
+                gap: 0.5rem; /* Reduced gap between skill cards */
             }
             .technical-skills .skill-card {
-                padding: 0.6rem; /* Reduced padding for skill cards */
+                padding: 0.5rem; /* Reduced padding for skill cards */
                 border-width: 0.5px; /* Thinner border for skill cards */
             }
             .technical-skills .skill-category-title {
-                font-size: 8.5pt; /* Smaller font for skill card titles */
-                margin-bottom: 0.2rem; /* Reduced margin */
+                font-size: 8pt; /* Smaller font for skill card titles */
+                margin-bottom: 0.15rem; /* Reduced margin */
             }
             .technical-skills .skill-list-items {
-                font-size: 7.5pt; /* Even smaller font for skill list items */
+                font-size: 7pt; /* Even smaller font for skill list items */
             }
             .education-entry {
-                margin-bottom: 0.3rem; /* Reduced margin for education entries */
-                padding-bottom: 0.3rem; /* Reduced padding */
+                margin-bottom: 0.25rem; /* Reduced margin for education entries */
+                padding-bottom: 0.25rem; /* Reduced padding */
             }
             .university-info {
-                margin-bottom: 0.2rem; /* Reduced margin for university info */
+                margin-bottom: 0.15rem; /* Reduced margin for university info */
             }
             .previous-experience-entry {
-                margin-bottom: 0.5rem; /* Reduced margin for previous experience entries */
-                padding-bottom: 0.5rem; /* Reduced padding */
+                margin-bottom: 0.4rem; /* Reduced margin for previous experience entries */
+                padding-bottom: 0.4rem; /* Reduced padding */
             }
             .previous-experience-details ul {
-                margin-left: 1rem; /* Reduced margin for previous experience details ul */
+                margin-left: 0.8rem; /* Reduced margin for previous experience details ul */
             }
             .previous-experience-details li {
-                margin-bottom: 0.15rem; /* Reduced margin for previous experience details */
+                margin-bottom: 0.1rem; /* Reduced margin for previous experience details */
             }
             .contact-section .space-y-2 p {
-                margin-bottom: 0.15rem; /* Reduced spacing for contact links */
+                margin-bottom: 0.1rem; /* Reduced spacing for contact links */
             }
 
 
             /* Page Breaks - Adjusted for 3 pages */
-            /* Page 1: Title, Professional Summary, Core Competencies, Key Achievements */
-            .section:has(h2:contains("Key Achievements")) {
+            /* Page 1: Title, Professional Summary, Core Competencies, Key Achievements, Senior Implementation Specialist */
+            .experience-entry.senior-implementation {
                 page-break-after: always;
             }
-            /* Page 2: Professional Experience */
-            .section:has(h2:contains("Professional Experience")) {
+
+            /* Page 2: Rest of Professional Experience, Technical Skills, Education */
+            .section:has(h2:contains("Education")) {
                 page-break-after: always;
             }
-            /* Page 3: Technical Skills, Education, Previous Experience Summary, Contact Information */
+            
+            /* Page 3: Previous Experience Summary, Contact Information */
 
             /* Ensure no unwanted breaks inside sections */
             .section, .experience-entry, .education-entry, .skill-card {
@@ -443,8 +445,7 @@
         <section class="section">
             <h2>Professional Experience</h2>
 
-            <div class="experience-entry">
-                <h3 class="job-title">Senior Implementation Specialist</h3>
+            <div class="experience-entry senior-implementation"> <h3 class="job-title">Senior Implementation Specialist</h3>
                 <p class="company-info">HomeWork Solutions Inc., Sterling, VA — April 2020 – October 2024</p>
                 <div class="experience-details">
                     <ul>
@@ -574,7 +575,7 @@
                 </div>
             </div>
 
-            <div class="previous-experience-entry">
+            <div class="experience-entry">
                 <h3 class="previous-job-title">Tasting Room Sales Assistant Manager</h3>
                 <p class="previous-company-info">Tarara Winery, Leesburg, VA — April 2010 – January 2012</p>
                  <div class="previous-experience-details">
@@ -586,7 +587,7 @@
                 </div>
             </div>
 
-             <div class="previous-experience-entry">
+             <div class="experience-entry">
                 <h3 class="previous-job-title">Line Cook</h3>
                 <p class="previous-company-info">Freemason Abbey Restaurant, Norfolk, VA — May 2008 – December 2009</p>
                  <div class="previous-experience-details">
