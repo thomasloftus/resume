@@ -288,7 +288,7 @@
                 background-color: #fff; /* Ensure white background for sections */
                 box-shadow: none;
                 padding: 0.15rem 0.5rem; /* Further reduced padding for print margins */
-                margin-bottom: 0; /* Remove margin between sections for page breaks */
+                margin-bottom: 0.1rem; /* Adjusted margin between sections for tighter fit */
                 border-radius: 0;
             }
             h1 {
@@ -367,11 +367,9 @@
                 margin-bottom: 0.05rem; /* Reduced spacing for contact links */
             }
 
-            /* Removed all explicit page-break-after and page-break-inside rules */
-
-            /* This will attempt to fit content onto 2 pages by aggressive scaling */
+            /* Hide the print button */
             .print-button {
-                display: none; /* Hide the print button */
+                display: none;
             }
         }
 
@@ -380,12 +378,6 @@
 <body>
 
     <div class="resume-container">
-        <div class="flex justify-end mb-4 print-button">
-            <button onclick="window.print()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg soft-shadow">
-                Print Resume
-            </button>
-        </div>
-
         <header class="resume-header">
             <div class="header-left">
                 <h1 class="text-4xl">Thomas Loftus III</h1>
@@ -596,6 +588,11 @@
             </div>
          </section>
 
+        <div class="flex justify-center mt-8 print-button">
+            <button onclick="window.print()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg soft-shadow">
+                Print Resume
+            </button>
+        </div>
 
     </div>
 
