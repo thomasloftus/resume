@@ -287,77 +287,77 @@
             .section {
                 background-color: #fff; /* Ensure white background for sections */
                 box-shadow: none;
-                padding: 0.2rem 0.6rem; /* Further reduced padding for print margins */
+                padding: 0.15rem 0.5rem; /* Further reduced padding for print margins */
                 margin-bottom: 0; /* Remove margin between sections for page breaks */
                 border-radius: 0;
             }
             h1 {
-                font-size: 16pt; /* Further reduced font for main title in print */
+                font-size: 15pt; /* Further reduced font for main title in print */
                 margin-bottom: 0.05rem; /* Reduced margin */
                 white-space: normal; /* Allow wrapping for print */
                 overflow: visible; /* Don't hide for print */
                 text-overflow: clip; /* No ellipsis for print */
             }
             h2 {
-                font-size: 10.5pt; /* Further adjusted H2 for print */
-                margin-bottom: 0.2rem; /* Reduced margin */
+                font-size: 10pt; /* Further adjusted H2 for print */
+                margin-bottom: 0.15rem; /* Reduced margin */
                 padding-bottom: 0.05rem; /* Reduced padding */
                 border-bottom: 1px solid #d1d5db; /* Lighter border for print */
             }
             p, li, .contact-info, .summary-text, .skill-list-items, .university-info, .previous-experience-summary {
-                font-size: 7.5pt; /* Even smaller text size for print */
-                line-height: 1.05; /* Tighter line height for print */
+                font-size: 7pt; /* Even smaller text size for print */
+                line-height: 1.0; /* Tighter line height for print */
             }
             .job-title, .degree, .previous-job-title {
-                font-size: 8pt; /* Slightly larger for titles in print */
+                font-size: 7.5pt; /* Slightly larger for titles in print */
             }
             .company-info, .previous-company-info {
-                font-size: 6pt; /* Smaller for company info in print */
+                font-size: 5.5pt; /* Smaller for company info in print */
             }
             .core-competencies li {
-                padding: 0.2rem 0.4rem; /* Reduced padding for competency items */
+                padding: 0.15rem 0.3rem; /* Reduced padding for competency items */
                 margin-bottom: 0.05rem; /* Reduced margin for competency items */
             }
             .achievements li {
-                margin-bottom: 0.2rem; /* Reduced margin for achievement items */
+                margin-bottom: 0.15rem; /* Reduced margin for achievement items */
             }
             .experience-entry {
-                margin-bottom: 0.4rem; /* Reduced margin for experience entries */
-                padding-bottom: 0.4rem; /* Reduced padding */
+                margin-bottom: 0.3rem; /* Reduced margin for experience entries */
+                padding-bottom: 0.3rem; /* Reduced padding */
             }
             .experience-details ul {
-                margin-left: 0.7rem; /* Reduced margin for experience details ul */
+                margin-left: 0.6rem; /* Reduced margin for experience details ul */
             }
             .experience-details li {
-                margin-bottom: 0.1rem; /* Reduced margin for experience details */
+                margin-bottom: 0.08rem; /* Reduced margin for experience details */
             }
             .technical-skills .skills-grid {
-                gap: 0.4rem; /* Reduced gap between skill cards */
+                gap: 0.3rem; /* Reduced gap between skill cards */
             }
             .technical-skills .skill-card {
-                padding: 0.4rem; /* Reduced padding for skill cards */
+                padding: 0.3rem; /* Reduced padding for skill cards */
                 border-width: 0.5px; /* Thinner border for skill cards */
             }
             .technical-skills .skill-category-title {
-                font-size: 7.5pt; /* Smaller font for skill card titles */
-                margin-bottom: 0.1rem; /* Reduced margin */
+                font-size: 7pt; /* Smaller font for skill card titles */
+                margin-bottom: 0.08rem; /* Reduced margin */
             }
             .technical-skills .skill-list-items {
-                font-size: 6.5pt; /* Even smaller font for skill list items */
+                font-size: 6pt; /* Even smaller font for skill list items */
             }
             .education-entry {
-                margin-bottom: 0.2rem; /* Reduced margin for education entries */
-                padding-bottom: 0.2rem; /* Reduced padding */
+                margin-bottom: 0.15rem; /* Reduced margin for education entries */
+                padding-bottom: 0.15rem; /* Reduced padding */
             }
             .university-info {
-                margin-bottom: 0.1rem; /* Reduced margin for university info */
+                margin-bottom: 0.08rem; /* Reduced margin for university info */
             }
             .previous-experience-entry {
-                margin-bottom: 0.3rem; /* Reduced margin for previous experience entries */
-                padding-bottom: 0.3rem; /* Reduced padding */
+                margin-bottom: 0.25rem; /* Reduced margin for previous experience entries */
+                padding-bottom: 0.25rem; /* Reduced padding */
             }
             .previous-experience-details ul {
-                margin-left: 0.7rem; /* Reduced margin for previous experience details ul */
+                margin-left: 0.6rem; /* Reduced margin for previous experience details ul */
             }
             .previous-experience-details li {
                 margin-bottom: 0.05rem; /* Reduced margin for previous experience details */
@@ -366,22 +366,9 @@
                 margin-bottom: 0.05rem; /* Reduced spacing for contact links */
             }
 
+            /* Removed all explicit page-break-after and page-break-inside rules */
 
-            /* Page Breaks - Adjusted for 2 pages by line numbers */
-            /* This will now force a break after the Education section to end Page 1 */
-            .section:has(h2:contains("Education")) {
-                page-break-after: always;
-            }
-            
-            /* Ensure no unwanted breaks inside sections */
-            .section, .experience-entry, .education-entry, .skill-card {
-                page-break-inside: avoid;
-            }
-
-            /* Hide the print button */
-            .print-button {
-                display: none;
-            }
+            /* This will attempt to fit content onto 2 pages by aggressive scaling */
         }
 
     </style>
