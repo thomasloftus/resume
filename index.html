@@ -367,20 +367,20 @@
             }
 
 
-            /* Page Breaks - Adjusted for 3 pages */
+            /* Page Breaks - Adjusted for 3 pages by line numbers */
             /* Page 1: Title, Professional Summary, Core Competencies, Key Achievements, Professional Experience */
-            /* This will now force a break after the entire Professional Experience section */
+            /* Break after the entire Professional Experience section to end Page 1 */
             .section:has(h2:contains("Professional Experience")) {
                 page-break-after: always;
             }
 
-            /* Page 2: Technical Skills, Education, Previous Experience Summary */
-            /* This will now force a break after the Previous Experience Summary section */
-            .section:has(h2:contains("Previous Experience Summary")) {
+            /* Page 2: Technical Skills, Education */
+            /* Break after the entire Education section to end Page 2 */
+            .section:has(h2:contains("Education")) {
                 page-break-after: always;
             }
             
-            /* Page 3: Contact Information */
+            /* Page 3: Previous Experience Summary, Contact Information */
 
             /* Ensure no unwanted breaks inside sections */
             .section, .experience-entry, .education-entry, .skill-card {
