@@ -30,7 +30,7 @@
             width: 100%; /* Ensure it takes full width on smaller screens */
             background-color: var(--card-bg); /* Container provides the main background */
             padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Medium shadow */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 44px 6px -2px rgba(0, 0, 0, 0.05); /* Medium shadow */
             border-radius: 0.75rem; /* rounded-xl */
         }
 
@@ -287,32 +287,73 @@
             .section {
                 background-color: #fff; /* Ensure white background for sections */
                 box-shadow: none;
-                padding: 0.75rem 1.25rem; /* Reduced padding for print margins */
+                padding: 0.5rem 1rem; /* Further reduced padding for print margins */
                 margin-bottom: 0; /* Remove margin between sections for page breaks */
                 border-radius: 0;
             }
             h1 {
-                font-size: 22pt; /* Slightly smaller font for main title in print */
-                margin-bottom: 0.2rem;
+                font-size: 20pt; /* Further reduced font for main title in print */
+                margin-bottom: 0.15rem; /* Reduced margin */
                 white-space: normal; /* Allow wrapping for print */
                 overflow: visible; /* Don't hide for print */
                 text-overflow: clip; /* No ellipsis for print */
             }
             h2 {
-                font-size: 14pt; /* Adjusted H2 for print */
-                margin-bottom: 0.5rem;
-                padding-bottom: 0.2rem;
+                font-size: 13pt; /* Further adjusted H2 for print */
+                margin-bottom: 0.4rem; /* Reduced margin */
+                padding-bottom: 0.15rem; /* Reduced padding */
                 border-bottom: 1px solid #d1d5db; /* Lighter border for print */
             }
             p, li, .contact-info, .summary-text, .skill-list-items, .university-info, .previous-experience-summary {
-                font-size: 9pt; /* Smaller text size for print */
-                line-height: 1.3; /* Tighter line height for print */
+                font-size: 8.5pt; /* Even smaller text size for print */
+                line-height: 1.2; /* Tighter line height for print */
             }
             .job-title, .degree, .previous-job-title {
-                font-size: 10pt; /* Slightly larger for titles in print */
+                font-size: 9.5pt; /* Slightly larger for titles in print */
             }
             .company-info, .previous-company-info {
-                font-size: 8pt; /* Smaller for company info in print */
+                font-size: 7.5pt; /* Smaller for company info in print */
+            }
+            .core-competencies li {
+                padding: 0.4rem 0.7rem; /* Reduced padding for competency items */
+                margin-bottom: 0.2rem; /* Reduced margin for competency items */
+            }
+            .achievements li {
+                margin-bottom: 0.4rem; /* Reduced margin for achievement items */
+            }
+            .experience-entry {
+                margin-bottom: 0.8rem; /* Reduced margin for experience entries */
+                padding-bottom: 0.8rem; /* Reduced padding */
+            }
+            .experience-details li {
+                margin-bottom: 0.3rem; /* Reduced margin for experience details */
+            }
+            .technical-skills .skill-card {
+                padding: 0.7rem; /* Reduced padding for skill cards */
+            }
+            .technical-skills .skill-category-title {
+                font-size: 9pt; /* Smaller font for skill card titles */
+                margin-bottom: 0.3rem; /* Reduced margin */
+            }
+            .technical-skills .skill-list-items {
+                font-size: 8pt; /* Even smaller font for skill list items */
+            }
+            .education-entry {
+                margin-bottom: 0.4rem; /* Reduced margin for education entries */
+                padding-bottom: 0.4rem; /* Reduced padding */
+            }
+            .university-info {
+                margin-bottom: 0.3rem; /* Reduced margin for university info */
+            }
+            .previous-experience-entry {
+                margin-bottom: 0.6rem; /* Reduced margin for previous experience entries */
+                padding-bottom: 0.6rem; /* Reduced padding */
+            }
+            .previous-experience-details li {
+                margin-bottom: 0.2rem; /* Reduced margin for previous experience details */
+            }
+            .contact-section .space-y-2 p {
+                margin-bottom: 0.2rem; /* Reduced spacing for contact links */
             }
 
             /* Page Breaks - Adjusted for 3 pages */
