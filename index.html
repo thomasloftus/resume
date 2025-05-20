@@ -369,11 +369,13 @@
 
             /* Page Breaks - Adjusted for 3 pages */
             /* Page 1: Title, Professional Summary, Core Competencies, Key Achievements, Professional Experience */
+            /* This will now force a break after the entire Professional Experience section */
             .section:has(h2:contains("Professional Experience")) {
                 page-break-after: always;
             }
 
             /* Page 2: Technical Skills, Education, Previous Experience Summary */
+            /* This will now force a break after the Previous Experience Summary section */
             .section:has(h2:contains("Previous Experience Summary")) {
                 page-break-after: always;
             }
@@ -445,7 +447,8 @@
         <section class="section">
             <h2>Professional Experience</h2>
 
-            <div class="experience-entry"> <h3 class="job-title">Senior Implementation Specialist</h3>
+            <div class="experience-entry">
+                <h3 class="job-title">Senior Implementation Specialist</h3>
                 <p class="company-info">HomeWork Solutions Inc., Sterling, VA — April 2020 – October 2024</p>
                 <div class="experience-details">
                     <ul>
@@ -551,7 +554,7 @@
                 Over 5 years of experience in high-volume customer-facing environments within the retail, hospitality, and wine industries, demonstrating a strong work ethic, refined multitasking capabilities, and concierge-level client service. Developed foundational strengths in team leadership, service delivery, and adaptability under pressure.
             </p>
 
-            <div class="previous-experience-entry">
+            <div class="experience-entry">
                 <h3 class="previous-job-title">Retail Sales Associate</h3>
                 <p class="previous-company-info">Columbia Sportswear, Leesburg, VA — July 2013 – July 2014</p>
                  <div class="previous-experience-details">
