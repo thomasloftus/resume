@@ -368,17 +368,17 @@
 
 
             /* Page Breaks - Adjusted for 3 pages */
-            /* Page 1: Title, Professional Summary, Core Competencies, Key Achievements, Senior Implementation Specialist */
-            .experience-entry.senior-implementation {
+            /* Page 1: Title, Professional Summary, Core Competencies, Key Achievements, Professional Experience */
+            .section:has(h2:contains("Professional Experience")) {
                 page-break-after: always;
             }
 
-            /* Page 2: Rest of Professional Experience, Technical Skills, Education */
-            .section:has(h2:contains("Education")) {
+            /* Page 2: Technical Skills, Education, Previous Experience Summary */
+            .section:has(h2:contains("Previous Experience Summary")) {
                 page-break-after: always;
             }
             
-            /* Page 3: Previous Experience Summary, Contact Information */
+            /* Page 3: Contact Information */
 
             /* Ensure no unwanted breaks inside sections */
             .section, .experience-entry, .education-entry, .skill-card {
@@ -445,7 +445,7 @@
         <section class="section">
             <h2>Professional Experience</h2>
 
-            <div class="experience-entry senior-implementation"> <h3 class="job-title">Senior Implementation Specialist</h3>
+            <div class="experience-entry"> <h3 class="job-title">Senior Implementation Specialist</h3>
                 <p class="company-info">HomeWork Solutions Inc., Sterling, VA — April 2020 – October 2024</p>
                 <div class="experience-details">
                     <ul>
@@ -563,7 +563,7 @@
                 </div>
             </div>
 
-            <div class="previous-experience-entry">
+            <div class="experience-entry">
                 <h3 class="previous-job-title">Independent Wine Sales Consultant</h3>
                 <p class="previous-company-info">FlowWine, Inc., Fairfax, VA — April 2012 – August 2012</p>
                  <div class="previous-experience-details">
