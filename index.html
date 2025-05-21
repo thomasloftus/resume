@@ -251,7 +251,7 @@
          .contact-section .space-y-2 {
             display: flex; /* Use flexbox for contact links */
             flex-direction: column; /* Stack links vertically */
-            align-items: flex-start; /* Align links to the start */
+            align-items: center; /* Changed to center align items */
          }
 
          .contact-section .space-y-2 a {
@@ -262,6 +262,24 @@
          .contact-section .space-y-2 a:hover {
              text-decoration: underline; /* Underline on hover */
          }
+
+        /* Removed "cone down" effect styles */
+        .contact-section .linkedin-cone-item,
+        .contact-section .personal-site-cone-item {
+            padding: 0; /* Reset padding */
+            background-color: transparent; /* Reset background */
+            border-radius: 0; /* Reset border-radius */
+            margin-bottom: 0; /* Reset margin */
+            display: block; /* Ensure they take full width for centering */
+            min-width: auto; /* Reset min-width */
+            text-align: center; /* Ensure text is centered */
+        }
+
+        /* Ensure the links themselves don't break the layout */
+        .contact-section .space-y-2 a {
+            white-space: nowrap; /* Prevent links from wrapping */
+        }
+
 
         /* Print specific styles */
         @media print {
@@ -373,6 +391,16 @@
             }
             .contact-section .space-y-2 p {
                 margin-bottom: 0.05rem; /* Slightly increased spacing for contact links */
+            }
+
+            /* Print specific styles for the "cone down" effect */
+            .contact-section .linkedin-cone-item {
+                padding: 0.15rem 0.75rem; /* Adjusted padding for print */
+                min-width: 4rem; /* Adjusted min-width for print */
+            }
+            .contact-section .personal-site-cone-item {
+                padding: 0.15rem 0.5rem; /* Adjusted padding for print */
+                min-width: 3rem; /* Adjusted min-width for print */
             }
 
             /* Hide the print button */
@@ -589,8 +617,9 @@
             <div class="space-y-2">
                 <p><a href="mailto:thomasloftus2@gmail.com">thomasloftus2@gmail.com</a></p>
                 <p><a href="https://maps.app.goo.gl/HEnP8BDJRmFZs1d48" target="_blank" rel="noopener noreferrer">Charlotte, NC 28202</a></p>
+                <p><a href="https://thomasloftus.github.io" target="_blank" rel="noopener noreferrer">Personal Site</a></p>
                 <p><a href="https://www.linkedin.com/in/thomasl609703704" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-                <p><a href="https://thomasloftus.github.io" target="_blank" rel="noopener noreferrer">Site</a></p>
+            
             </div>
          </section>
 
