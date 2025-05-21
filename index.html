@@ -55,6 +55,12 @@
             border-bottom: 2px solid var(--secondary-accent);
         }
 
+        /* Specific style for Contact Information heading to center align */
+        .contact-section h2 {
+            text-align: center; /* Center align the contact section heading */
+        }
+
+
         .section {
             margin-bottom: 2rem;
             padding: 1.5rem;
@@ -327,6 +333,10 @@
                 padding-bottom: 0.03rem; /* Reduced padding */
                 border-bottom: 1px solid #d1d5db; /* Lighter border for print */
             }
+            /* Specific print style for Contact Information heading to center align */
+            .contact-section h2 {
+                text-align: center; /* Center align the contact section heading in print */
+            }
             p, li, .contact-info, .summary-text, .skill-list-items, .university-info, .previous-experience-summary {
                 font-size: 6.8pt; /* Adjusted text size for print */
                 line-height: 0.95; /* Tighter line height for print */
@@ -391,16 +401,6 @@
             }
             .contact-section .space-y-2 p {
                 margin-bottom: 0.05rem; /* Slightly increased spacing for contact links */
-            }
-
-            /* Print specific styles for the "cone down" effect */
-            .contact-section .linkedin-cone-item {
-                padding: 0.15rem 0.75rem; /* Adjusted padding for print */
-                min-width: 4rem; /* Adjusted min-width for print */
-            }
-            .contact-section .personal-site-cone-item {
-                padding: 0.15rem 0.5rem; /* Adjusted padding for print */
-                min-width: 3rem; /* Adjusted min-width for print */
             }
 
             /* Hide the print button */
