@@ -32,6 +32,7 @@
             padding: 2rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Medium shadow */
             border-radius: 0.75rem; /* rounded-xl */
+            position: relative; /* Added for absolute positioning of back button */
         }
 
         h1, h2 {
@@ -253,38 +254,50 @@
             padding: 0 1.5rem; /* Consistent horizontal padding with sections */
          }
 
-         /* New Contact Section Styling */
-         .contact-section .space-y-2 {
-            display: flex; /* Use flexbox for contact links */
-            flex-direction: column; /* Stack links vertically */
-            align-items: center; /* Changed to center align items */
+         /* Contact Section Styling - Updated for icons and text */
+         .contact-section .contact-items-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Default to single column */
+            gap: 0.75rem; /* Space between contact items */
+            justify-items: center; /* Center items horizontally */
          }
 
-         .contact-section .space-y-2 a {
-             color: var(--secondary-accent); /* Blue link color */
-             text-decoration: none; /* No underline by default */
+         .contact-section .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem; /* Space between icon and text */
+            color: var(--primary-dark); /* Default text color */
+            font-size: 1rem;
+            text-align: center; /* Center text within item */
          }
 
-         .contact-section .space-y-2 a:hover {
-             text-decoration: underline; /* Underline on hover */
+         .contact-section .contact-item a {
+            color: var(--secondary-accent); /* Blue link color */
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
          }
 
-        /* Removed "cone down" effect styles */
-        .contact-section .linkedin-cone-item,
-        .contact-section .personal-site-cone-item {
-            padding: 0; /* Reset padding */
-            background-color: transparent; /* Reset background */
-            border-radius: 0; /* Reset border-radius */
-            margin-bottom: 0; /* Reset margin */
-            display: block; /* Ensure they take full width for centering */
-            min-width: auto; /* Reset min-width */
-            text-align: center; /* Ensure text is centered */
-        }
+         .contact-section .contact-item a:hover {
+            text-decoration: underline;
+         }
 
-        /* Ensure the links themselves don't break the layout */
-        .contact-section .space-y-2 a {
-            white-space: nowrap; /* Prevent links from wrapping */
-        }
+         .contact-section .contact-item svg {
+            width: 1.25rem; /* Icon size */
+            height: 1.25rem;
+            fill: var(--secondary-accent); /* Icon color */
+            flex-shrink: 0; /* Prevent icon from shrinking */
+         }
+
+         /* Adjust grid for larger screens */
+         @media (min-width: 640px) { /* Tailwind's sm breakpoint */
+            .contact-section .contact-items-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+                gap: 1rem 2rem; /* Row gap, column gap */
+            }
+            .contact-section .contact-item {
+                justify-content: flex-start; /* Align items to start in columns */
+            }
+         }
 
 
         /* Print specific styles */
@@ -409,6 +422,29 @@
             }
         }
 
+        /* Back button styling */
+        .back-button {
+            display: flex; /* Make it a flex container */
+            align-items: center; /* Vertically align icon and text */
+            gap: 0.25rem; /* Space between icon and text */
+            color: var(--secondary-accent);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--secondary-accent);
+            color: white;
+        }
+
+        .back-button svg {
+            width: 1rem; /* Adjust icon size */
+            height: 1rem;
+            fill: currentColor; /* Inherit color from parent */
+        }
     </style>
 </head>
 <body>
@@ -589,7 +625,7 @@
             <div class="experience-entry">
                 <h3 class="previous-job-title">Tasting Room Sales Assistant Manager</h3>
                 <p class="previous-company-info">Tarara Winery, Leesburg, VA — April 2010 – January 2012</p>
-                 <div class="previous-experience-details">
+                 <div class="experience-details">
                     <ul>
                         <li>Wine & Spirit Education Trust (WSET) Certification Level 2.</li>
                         <li>Led team by coordinating roles, resolving conflicts, and ensuring smooth cross-functional communication during high-volume events.</li>
@@ -614,14 +650,39 @@
 
          <section class="section contact-section">
             <h2>Contact Information</h2>
-            <div class="space-y-2">
-                <p><a href="https://maps.app.goo.gl/HEnP8BDJRmFZs1d48" target="_blank" rel="noopener noreferrer">Charlotte, NC 28202</a></p>
-                <p><a href="https://www.linkedin.com/in/thomasl609703704" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-                <p><a href="mailto:thomas@thomasloftus.com">Email</a></p>
+            <div class="contact-items-grid">
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
+                        <path d="M22 6C22 5.45 21.55 5 21 5H3C2.45 5 2 5.45 2 6V18C2 18.55 2.45 19 3 19H21C21.55 19 22 18.55 22 18V6ZM20 7L12 12L4 7V7.5L12 12.5L20 7.5V7ZM4 17V8.5L12 13.5L20 8.5V17H4Z"/>
+                    </svg>
+                    <a href="mailto:thomas@thomasloftus.com">thomas@thomasloftus.com</a>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
+                        <path d="M20 15.5C18.75 15.5 17.55 15.3 16.43 14.93C16.08 14.81 15.69 14.89 15.42 15.17L13.22 17.37C10.39 15.93 8.08 13.62 6.64 10.79L8.84 8.59C9.12 8.32 9.2 7.92 9.08 7.57C8.71 6.45 8.51 5.25 8.51 4C8.51 3.45 8.06 3 7.51 3H4C3.45 3 3 3.45 3 4C3 13.21 10.79 21 20 21C20.55 21 21 20.55 21 20V16.5C21 15.95 20.55 15.5 20 15.5Z"/>
+                    </svg>
+                    <a href="tel:+17047058526">(704) 705-8526</a>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
+                        <path d="M20 2H4C2.9 2 2 2.9 2 4V20C2 21.1 2.9 22 4 22H20C21.1 22 22 21.1 22 20V4C22 2.9 21.1 2 20 2ZM8 19H5V9H8V19ZM6.5 7.7C5.53 7.7 4.75 6.92 4.75 5.95C4.75 4.98 5.53 4.2 6.5 4.2C7.47 4.2 8.25 4.98 8.25 5.95C8.25 6.92 7.47 7.7 6.5 7.7ZM19 19H16V13.5C16 12.12 15.11 11.23 13.91 11.23C12.72 11.23 12 12.12 12 13.5V19H9V9H12V10.7C12.43 9.9 13.11 9.42 14.12 9.42C15.93 9.42 17 10.5 17 12.55V19H19V19Z"/>
+                    </svg>
+                    <a href="https://www.linkedin.com/in/thomasl609703704" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
+                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"/>
+                    </svg>
+                    <a href="https://maps.app.goo.gl/itjxJ6w9pKb7Zp63A" target="_blank" rel="noopener noreferrer">Charlotte, NC 28202</a>
+                </div>
             </div>
          </section>
 
-        <div class="flex justify-center mt-8 print-button">
+        <div class="flex justify-between mt-8"> <a href="/" class="back-button"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+                </svg>
+                Back
+            </a>
             <button onclick="window.print()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg soft-shadow">
                 Print Resume
             </button>
