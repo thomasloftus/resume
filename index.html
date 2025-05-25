@@ -30,7 +30,7 @@
             width: 100%; /* Ensure it takes full width on smaller screens */
             background-color: var(--card-bg); /* Container provides the main background */
             padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Medium shadow */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 44px 6px -2px rgba(0, 0, 0, 0.05); /* Medium shadow */
             border-radius: 0.75rem; /* rounded-xl */
             position: relative; /* Added for absolute positioning of back button */
         }
@@ -284,7 +284,7 @@
          .contact-section .contact-item svg {
             width: 1.25rem; /* Icon size */
             height: 1.25rem;
-            fill: var(--secondary-accent); /* Icon color */
+            fill: currentColor; /* Inherit color from parent */
             flex-shrink: 0; /* Prevent icon from shrinking */
          }
 
@@ -301,124 +301,197 @@
 
 
         /* Print specific styles */
+        /* Define US‑Letter, portrait, with 0.5” margins */
+        @page {
+            size: letter portrait;
+            margin: 0.5in;
+        }
+
         @media print {
-            body {
-                background-color: #fff;
-                /* Set paper size for US Letter */
-                width: 8.5in;
-                height: 11in;
-                padding: 0.6in 0.5in; /* Increased top and bottom padding for print margins */
+            /* Reset overall page */
+            html, body {
                 margin: 0;
-                display: block; /* Override flex for print */
-                -webkit-print-color-adjust: exact; /* For background colors to print */
-                color-adjust: exact;
-                /* Apply scaling to the body */
-                transform: scale(0.97); /* Scale down the entire content for print */
-                transform-origin: top left; /* Scale from the top-left corner */
-                overflow: hidden; /* Hide any potential scrollbars due to scaling */
-            }
-            .resume-container {
-                max-width: none;
-                width: 100%;
                 padding: 0;
-                box-shadow: none;
-                border-radius: 0;
-                margin: 0; /* Remove any margin */
-            }
-            .section {
-                background-color: #fff; /* Ensure white background for sections */
-                box-shadow: none;
-                padding: 0.1rem 0.5rem; /* Further reduced padding for print margins */
-                margin-bottom: 0.05rem; /* Adjusted margin between sections for tighter fit */
-                border-radius: 0;
-            }
-            h1 {
-                font-size: 14pt; /* Adjusted font for main title in print */
-                margin-bottom: 0.05rem; /* Reduced margin */
-                white-space: normal; /* Allow wrapping for print */
-                overflow: visible; /* Don't hide for print */
-                text-overflow: clip; /* No ellipsis for print */
-                text-align: center; /* Center justify title in print mode */
-            }
-            h2 {
-                font-size: 9.5pt; /* Adjusted H2 for print */
-                margin-bottom: 0.1rem; /* Reduced margin */
-                padding-bottom: 0.03rem; /* Reduced padding */
-                border-bottom: 1px solid #d1d5db; /* Lighter border for print */
-            }
-            /* Specific print style for Contact Information heading to center align */
-            .contact-section h2 {
-                text-align: center; /* Center align the contact section heading in print */
-            }
-            p, li, .contact-info, .summary-text, .skill-list-items, .university-info, .previous-experience-summary {
-                font-size: 6.8pt; /* Adjusted text size for print */
-                line-height: 0.95; /* Tighter line height for print */
-            }
-            .job-title, .degree, .previous-job-title {
-                font-size: 7.2pt; /* Slightly larger for titles in print */
-            }
-            .company-info, .previous-company-info {
-                font-size: 5.3pt; /* Smaller for company info in print */
-            }
-            .core-competencies li {
-                padding: 0.1rem 0.25rem; /* Reduced padding for competency items */
-                margin-bottom: 0.03rem; /* Reduced margin for competency items */
-            }
-            .achievements li {
-                margin-bottom: 0.1rem; /* Reduced margin for achievement items */
-            }
-            .experience-entry {
-                margin-bottom: 0.25rem; /* Reduced margin for experience entries */
-                padding-bottom: 0.25rem; /* Reduced padding */
-            }
-            .experience-details ul {
-                margin-left: 0.5rem; /* Reduced margin for experience details ul */
-            }
-            .experience-details li {
-                margin-bottom: 0.05rem; /* Reduced margin for experience details */
-            }
-            .technical-skills {
-                page-break-before: always; /* Force page break before Technical Skills */
-                padding-top: 0.3in; /* Increased extra padding at the top of Technical Skills section for print */
-            }
-            .technical-skills .skills-grid {
-                gap: 0.25rem; /* Reduced gap between skill cards */
-            }
-            .technical-skills .skill-card {
-                padding: 0.25rem; /* Reduced padding for skill cards */
-                border-width: 0.5px; /* Thinner border for skill cards */
-            }
-            .technical-skills .skill-category-title {
-                font-size: 6.8pt; /* Smaller font for skill card titles */
-                margin-bottom: 0.05rem; /* Reduced margin */
-            }
-            .technical-skills .skill-list-items {
-                font-size: 5.8pt; /* Even smaller font for skill list items */
-            }
-            .education-entry {
-                margin-bottom: 0.15rem; /* Slightly increased margin for education entries */
-                padding-bottom: 0.15rem; /* Slightly increased padding */
-            }
-            .university-info {
-                margin-bottom: 0.08rem; /* Slightly increased margin for university info */
-            }
-            .previous-experience-entry {
-                margin-bottom: 0.25rem; /* Slightly increased margin for previous experience entries */
-                padding-bottom: 0.25rem; /* Slightly increased padding */
-            }
-            .previous-experience-details ul {
-                margin-left: 0.6rem; /* Slightly increased margin for previous experience details ul */
-            }
-            .previous-experience-details li {
-                margin-bottom: 0.05rem; /* Slightly increased margin for previous experience details */
-            }
-            .contact-section .space-y-2 p {
-                margin-bottom: 0.05rem; /* Slightly increased spacing for contact links */
+                width: auto;
+                height: auto;
+                background: #fff !important;
+                color-adjust: exact;
+                -webkit-print-color-adjust: exact;
             }
 
-            /* Hide the print button */
-            .print-button {
-                display: none !important; /* Added !important to ensure it's hidden */
+            /* Resume container takes full printable width */
+            .resume-container {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+
+            /* Simplify section spacing */
+            .section {
+                background: #fff !important;
+                box-shadow: none !important;
+                padding: 0.1em 0 !important; /* Reduced padding */
+                margin: 0.1em 0 !important; /* Reduced margin */
+            }
+
+            /* Prevent awkward breaks */
+            header, h1, h2,
+            .experience-entry,
+            .education-entry,
+            .technical-skills,
+            .core-competencies,
+            .achievements {
+                page-break-inside: avoid !important;
+            }
+
+            /* Shrink text more aggressively to force one‑page fit */
+            body * {
+                font-size: 0.85em !important; /* More aggressive font size reduction */
+                line-height: 1.05 !important; /* Tighter line height for all text */
+            }
+
+            /* Specific font size adjustments for print */
+            h1 { font-size: 1.8em !important; } /* Relative to body font size */
+            h2 { font-size: 1.4em !important; }
+            .job-title, .degree, .previous-job-title { font-size: 1.1em !important; }
+            .company-info, .university-info, .previous-company-info { font-size: 0.9em !important; }
+            .summary-text, .experience-details li, .previous-experience-details li,
+            .skill-list-items, .contact-item {
+                font-size: 0.9em !important; /* Adjust base text size */
+            }
+            .technical-skills .skill-category-title { font-size: 1em !important; }
+
+            /* Core Competencies specific print styles */
+            .core-competencies li {
+                background-color: transparent !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                margin-bottom: 0.05em !important; /* Very small spacing */
+            }
+
+            /* Key Achievements specific print styles */
+            .achievements ul {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important; /* 2 columns */
+                gap: 0.5em !important; /* Gap between columns */
+            }
+            .achievements li {
+                margin-bottom: 0.1em !important; /* Reduce margin for achievement items */
+                padding: 0.1em !important; /* Add some padding back for visual separation in grid */
+                border: 0.5px solid #eee !important; /* Subtle border for grid items */
+                border-radius: 0.2em !important; /* Small rounded corners */
+            }
+
+
+            /* Technical Skills specific print styles */
+            .technical-skills .skills-grid {
+                display: grid !important; /* Re-enable grid for columns */
+                grid-template-columns: repeat(2, 1fr) !important; /* Two columns */
+                gap: 0.5em !important; /* Reduced gap between columns */
+            }
+            .technical-skills .skill-card {
+                background-color: transparent !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                margin-bottom: 0.1em !important; /* Reduce space between each skill category */
+            }
+            .technical-skills .skill-category-title {
+                margin-bottom: 0.05em !important; /* Reduce space after title */
+                font-size: 1em !important; /* Relative to body font size */
+            }
+            .technical-skills .skill-list-items {
+                margin-top: 0.05em !important; /* Reduce space before list items */
+                font-size: 0.9em !important; /* Smaller text for the list */
+                line-height: 1.1em !important; /* Ensure tight line height for skill items */
+            }
+
+
+            /* Professional Experience section specific print styles */
+            .section:has(h2:contains("Professional Experience")) {
+                margin-top: 0.2in !important; /* Extra top margin for print */
+                margin-bottom: 0.2in !important; /* Extra bottom margin for print */
+            }
+            .experience-entry {
+                margin-bottom: 0.1em !important; /* Reduced margin */
+                padding-bottom: 0.1em !important; /* Reduced padding */
+            }
+            .experience-entry:last-child {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            .job-title {
+                margin-bottom: 0.05em !important; /* Reduced margin */
+                line-height: 1.1em !important; /* Tighter line height */
+            }
+            .company-info {
+                margin-bottom: 0.05em !important; /* Reduced margin */
+                line-height: 1.05em !important; /* Tighter line height */
+            }
+            .experience-details ul {
+                margin-left: 0.8em !important; /* Reduced left margin for lists */
+            }
+            .experience-details li {
+                margin-bottom: 0.02em !important; /* Made list items very dense */
+                padding: 0.02em 0 !important; /* Reduced padding for list items */
+            }
+
+            /* Education section specific print styles */
+            .section:has(h2:contains("Education")) {
+                page-break-before: always !important; /* Force page break before Education section */
+            }
+            .education-entry {
+                margin-bottom: 0.1em !important; /* Reduced margin */
+                padding-bottom: 0.1em !important; /* Reduced padding */
+            }
+            .education-entry:last-child {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            .university-info {
+                margin-bottom: 0.05em !important; /* Reduced margin */
+                line-height: 1.05em !important; /* Tighter line height */
+            }
+
+            /* Previous Experience section specific print styles */
+            .previous-experience-summary {
+                margin-bottom: 0.5em !important; /* Tighten up the paragraph itself */
+                line-height: 1.1em !important; /* Tighter line height for summary paragraph */
+            }
+            .previous-experience-entry {
+                margin-bottom: 0.05em !important; /* Further reduced margin */
+                padding-bottom: 0.05em !important; /* Further reduced padding */
+                border-bottom: none !important; /* Remove border for previous experience entries */
+            }
+            .previous-experience-entry:last-child {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            .previous-job-title {
+                margin-bottom: 0.02em !important; /* Further reduced margin */
+                line-height: 1.05em !important; /* Tighter line height */
+            }
+            .previous-company-info {
+                margin-bottom: 0.02em !important; /* Further reduced margin */
+                line-height: 1.05em !important; /* Tighter line height */
+            }
+            .previous-experience-details ul {
+                margin-left: 0.8em !important; /* Reduced left margin for lists */
+            }
+            .previous-experience-details li {
+                margin-bottom: 0.01em !important; /* Made list items very dense */
+                padding: 0.01em 0 !important; /* Reduced padding for list items */
+            }
+
+
+            /* Hide UI elements you don’t want printed */
+            .print-button,
+            .back-button {
+                display: none !important;
             }
         }
 
@@ -565,7 +638,7 @@
                 </div>
                  <div class="skill-card">
                     <div class="skill-category-title">Data Management & Analysis:</div>
-                    <div class="skill-list-items">Postgresql, PgAdmin, API management, SLA Monitoring, Microsoft Excel</div>
+                    <div class="skill-list-items">PostgreSQL, PgAdmin, API management, SLA Monitoring, Microsoft Excel</div>
                 </div>
                  <div class="skill-card">
                     <div class="skill-category-title">Documentation & E-Signature:</div>
@@ -582,13 +655,13 @@
             <h2>Education</h2>
             <div class="education-entry">
                 <h3 class="degree">Bachelor of Science (BS)</h3>
-                <p class="university-info">Shenandoah University, Winchester, VA — 2012 – 2014</p>
-                <p class="university-info">Sociology and Business Administration</p>
+                <p class="university-info">Shenandoah University, Winchester, VA 						   2012 – 2014</p>
+                <p class="university-info">Sociology, Business Management and Administration</p>
             </div>
              <div class="education-entry">
                 <h3 class="degree">Associate of Business Administration (ABA)</h3>
-                <p class="university-info">Old Dominion University, Norfolk, VA — 2005 – 2008</p>
-                <p class="university-info">Business Administration and Management</p>
+                <p class="university-info">Old Dominion University, Norfolk, VA							    2005 – 2008</p>
+                <p class="university-info">Business Management and Administration</p>
             </div>
         </section>
 
@@ -623,9 +696,9 @@
             </div>
 
             <div class="experience-entry">
-                <h3 class="previous-job-title">Tasting Room Sales Manager</h3>
+                <h3 class="previous-job-title">Tasting Room Sales Assistant Manager</h3>
                 <p class="previous-company-info">Tarara Winery, Leesburg, VA — April 2010 – January 2012</p>
-                 <div class="experience-details">
+                 <div class="previous-experience-details">
                     <ul>
                         <li>Wine & Spirit Education Trust (WSET) Certification Level 2.</li>
                         <li>Led team by coordinating roles, resolving conflicts, and ensuring smooth cross-functional communication during high-volume events.</li>
@@ -678,7 +751,9 @@
             </div>
          </section>
 
-        <div class="flex justify-between mt-8"> <a href="/" class="back-button"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <div class="flex justify-between mt-8">
+            <a href="/" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
                 </svg>
                 Back
