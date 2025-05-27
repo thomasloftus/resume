@@ -199,11 +199,27 @@
             margin-bottom: 0.1rem; /* Reduced margin */
         }
 
+        /* Reusing company-info for university details for consistent styling */
         .university-info {
              font-size: 1rem;
             color: #4b5563; /* gray-600 */
             margin-bottom: 0.5rem; /* Reduced margin */
         }
+
+        /* Specific style for italic and smaller text */
+        .text-sm-italic {
+            font-size: 0.875rem; /* text-sm */
+            font-style: italic;
+        }
+
+        /* New class for education details content to match previous experience list item font */
+        .education-detail-text {
+            font-size: 0.875rem; /* text-sm from previous-experience-details li */
+            color: #374151; /* gray-700 from previous-experience-details li */
+            margin-top: 0.25rem; /* Small spacing */
+            margin-bottom: 0.25rem; /* Small spacing */
+        }
+
 
          .previous-experience-summary {
             margin-bottom: 1.5rem;
@@ -449,6 +465,7 @@
                 padding-bottom: 0.1em !important; /* Reduced padding */
             }
             .education-entry:last-child {
+                border-bottom: none !important; /* Remove border for the last entry */
                 margin-bottom: 0 !important;
                 padding-bottom: 0 !important;
             }
@@ -456,6 +473,16 @@
                 margin-bottom: 0.05em !important; /* Reduced margin */
                 line-height: 1.05em !important; /* Tighter line height */
             }
+            .text-sm-italic {
+                font-size: 0.8em !important; /* Even smaller for print */
+            }
+            .education-detail-text {
+                font-size: 0.8em !important; /* Match previous-experience-details li for print */
+                line-height: 1.05em !important;
+                margin-top: 0.05em !important;
+                margin-bottom: 0.05em !important;
+            }
+
 
             /* Previous Experience section specific print styles */
             .previous-experience-summary {
@@ -531,7 +558,7 @@
         <section class="section">
             <h2>Professional Summary</h2>
             <p class="summary-text">
-                Versatile and results-driven Systems Implementation Specialist with over 10 years of experience in public payroll tax accounting services, payroll payment processing software implementation, regulatory tax guidance, and business systems operations. Demonstrated exceptional success in leading organizational structural initiatives, developing digital workflow optimizations, maintaining Customer Record Management (CRM) systems, managing regulatory platforms to ensure client compliance, and delivering comprehensive project performance analysis. Proven leader and collaborator in project organizational methods, partner relationship management, concierge-level client support services, and data processing enhancement implementation.
+                Versatile and results-driven Systems Implementation Specialist with over 10 years of experience in public payroll tax accounting services, payroll payment processing software implementation, regulatory tax guidance, and business systems operations. Demonstrated exceptional success in leading organizational structural initiatives, developing digital workflow optimizations, maintaining Customer Record Management (CRM) systems, managing regulatory platforms to ensure employer compliance, and delivering comprehensive project performance analysis. Proven leader and collaborator in project organizational methods, partner relationship management, concierge-level client support services, and data processing enhancement implementation.
             </p>
         </section>
 
@@ -597,7 +624,7 @@
                 <p class="company-info">HomeWork Solutions Inc., Sterling, VA — July 2014 – October 2016</p>
                 <div class="experience-details">
                     <ul>
-                        <li>Processed client onboarding and tax enrollment tasks with high accuracy, ensuring timely and compliant employer Federal and State account setups.</li>
+                        <li>Processed client Enrollments and onboarding tasks with high accuracy, ensuring timely and compliant employer Federal and State account setups.</li>
                         <li>Maintained confidentiality and security of sensitive client data, including PII and financial information.</li>
                         <li>Handled high volumes of client inquiries, consistently achieving high satisfaction ratings.</li>
                         <li>Processed client Onboardings and onboarding task, supported payroll team with new hire reporting and employment claims with a high degree of accuracy.</li>
@@ -625,7 +652,7 @@
             <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-category-title">CRM Platforms & System Support:</div>
+                    <div class="skill-category-title">CRM & Support Platforms:</div>
                     <div class="skill-list-items">Microsoft Access, Zendesk, HubSpot, QuickBooks</div>
                 </div>
                  <div class="skill-card">
@@ -655,13 +682,19 @@
             <h2>Education</h2>
             <div class="education-entry">
                 <h3 class="degree">Bachelor of Science (B.S.) of Sociology</h3>
-                <p class="university-info">Shenandoah University, Winchester, VA 						   2012 – 2014</p>
-                <p class="university-info">Minor, Business Management and Administration</p>
+                <p class="university-info">Shenandoah University, Winchester, VA — 2012 – 2014</p>
+                <div class="education-details">
+                    <p class="education-detail-text">Area of Study: Accounting, Business Statistics & Data Analysis, Business Marketing & Development</p>
+                    <p class="education-detail-text text-sm-italic">Graduated May 2014 with Honors Summa Cum Laude</p>
+                </div>
             </div>
              <div class="education-entry">
                 <h3 class="degree">Associate of Business Management and Administration</h3>
-                <p class="university-info">Old Dominion University, Norfolk, VA							    2005 – 2008</p>
-                <p class="university-info">Business Management and Administration</p>
+                <p class="university-info">Old Dominion University, Norfolk, VA — 2005 – 2008</p>
+                <div class="education-details">
+                    <p class="education-detail-text">Business Management and Administration</p>
+                    <p class="education-detail-text text-sm-italic">Transferred Credits</p>
+                </div>
             </div>
         </section>
 
@@ -696,7 +729,7 @@
             </div>
 
             <div class="experience-entry">
-                <h3 class="previous-job-title">Tasting Room Manager</h3>
+                <h3 class="previous-job-title">Tasting Room Sales Manager</h3>
                 <p class="previous-company-info">Tarara Winery, Leesburg, VA — April 2010 – January 2012</p>
                  <div class="previous-experience-details">
                     <ul>
@@ -746,7 +779,7 @@
                     <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5">
                         <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"/>
                     </svg>
-                    <a href="https://maps.app.goo.gl/itjxJ6w9pKb7Zp63A" target="_blank" rel="noopener noreferrer">Charlotte, NC 28202</a>
+                    <a href="https://googleusercontent.com/maps.google.com/4" target="_blank" rel="noopener noreferrer">Charlotte, NC 28202</a>
                 </div>
             </div>
          </section>
