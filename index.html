@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Loftus III - Resume</title>
+    <title>Thomas Loftus - Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom styles for professional color palette, soft shadows, and rounded corners */
         :root {
-            --primary-dark: #1f2937; /* Dark gray for text/headings */
-            --primary-light: #f9fafb; /* Light gray for background */
-            --secondary-accent: #3b82f6; /* Blue for accents/borders */
-            --card-bg: #ffffff; /* White for card backgrounds */
-            --section-bg: #e5e7eb; /* Light gray for section backgrounds */
+            --primary-dark: #1f2937;
+            --primary-light: #f9fafb;
+            --secondary-accent: #3b82f6;
+            --card-bg: #ffffff;
+            --section-bg: #e5e7eb;
         }
 
         body {
-            font-family: 'Inter', sans-serif; /* Using Inter font */
+            font-family: 'Inter', sans-serif;
             color: var(--primary-dark);
             line-height: 1.6;
             padding: 1rem;
             display: flex;
             justify-content: center;
-            background-color: var(--primary-light); /* Added back a subtle page background */
+            background-color: var(--primary-light);
         }
 
         .resume-container {
-            max-width: 800px; /* Max width for a standard resume layout */
-            width: 100%; /* Ensure it takes full width on smaller screens */
-            background-color: var(--card-bg); /* Container provides the main background */
+            max-width: 800px;
+            width: 100%;
+            background-color: var(--card-bg);
             padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 44px 6px -2px rgba(0, 0, 0, 0.05); /* Medium shadow */
-            border-radius: 0.75rem; /* rounded-xl */
-            position: relative; /* Added for absolute positioning of back button */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 44px 6px -2px rgba(0, 0, 0, 0.05); 
+            border-radius: 0.75rem;
+            position: relative;
         }
 
         h1, h2 {
@@ -41,24 +40,23 @@
         }
 
         h1 {
-            font-size: 2.25rem; /* text-4xl */
+            font-size: 2.25rem;
             margin-bottom: 0.5rem;
-            white-space: nowrap; /* Prevent text wrapping on screen */
-            overflow: hidden; /* Hide overflowing text on screen */
-            text-overflow: ellipsis; /* Add ellipsis to truncated text on screen */
-            text-align: center; /* Center justify title for all screen sizes */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
         }
 
         h2 {
-            font-size: 1.5rem; /* text-2xl */
+            font-size: 1.5rem; 
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--secondary-accent);
         }
 
-        /* Specific style for Contact Information heading to center align */
         .contact-section h2 {
-            text-align: center; /* Center align the contact section heading */
+            text-align: center;
         }
 
 
@@ -66,50 +64,48 @@
             margin-bottom: 2rem;
             padding: 1.5rem;
             background-color: var(--section-bg);
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Small shadow */
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         }
 
-        /* Specific adjustment for Education section margin */
         .section:has(h2:contains("Education")) {
-             margin-bottom: 1.5rem; /* Reduced margin for the entire Education section */
+             margin-bottom: 1.5rem;
         }
 
 
         .contact-info {
             font-size: 1rem;
-            color: #4b5563; /* gray-600 */
+            color: #4b5563;
         }
 
         .summary-text {
             margin-bottom: 1.5rem;
-            color: #374151; /* gray-700 */
+            color: #374151;
         }
 
         .core-competencies ul {
-            list-style: none; /* Remove default list styling */
+            list-style: none;
             padding: 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 0.75rem;
         }
 
-        /* Simplified styling for Core Competencies list items - removed bullet styles */
         .core-competencies li {
             background-color: var(--card-bg);
-            padding: 0.75rem 1rem; /* Keep padding */
-            border-radius: 0.25rem; /* Keep rounded corners */
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Keep small shadow for separation */
-            border: 1px solid #d1d5db; /* Subtle border for definition */
-             margin-left: 0; /* Ensure no left margin from list style */
+            padding: 0.75rem 1rem;
+            border-radius: 0.25rem; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+            border: 1px solid #d1d5db; 
+             margin-left: 0; /
         }
 
 
         .achievements ul {
-            list-style: none; /* Remove bullet points */
-            padding: 0; /* Remove default padding */
-            margin-left: 0; /* Remove default margin */
-            color: #374151; /* gray-700 */
+            list-style: none; 
+            padding: 0; 
+            margin-left: 0; 
+            color: #374151; 
         }
 
         .achievements li {
@@ -119,50 +115,48 @@
         .experience-entry {
             margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
-            border-bottom: 1px solid #d1d5db; /* gray-300 */
+            border-bottom: 1px solid #d1d5db; /
         }
 
         .experience-entry:last-child {
-            border-bottom: none; /* No border for the last entry */
+            border-bottom: none; 
             margin-bottom: 0;
             padding-bottom: 0;
         }
 
         .job-title {
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* semibold */
+            font-size: 1.125rem; 
+            font-weight: 600; 
             margin-bottom: 0.25rem;
         }
 
         .company-info {
             font-size: 1rem;
-            color: #4b5563; /* gray-600 */
+            color: #4b5563; 
             margin-bottom: 0.75rem;
         }
 
         .experience-details ul {
             list-style: disc;
-            margin-left: 1.25rem; /* pl-5 */
-            color: #374151; /* gray-700 */
+            margin-left: 1.25rem; 
+            color: #374151; 
         }
 
         .experience-details li {
             margin-bottom: 0.5rem;
         }
 
-        /* Technical Skills layout - Card Grid */
         .technical-skills .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid for cards */
-            gap: 1rem; /* Gap between cards */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         }
 
         .technical-skills .skill-card {
             background-color: var(--card-bg);
             padding: 1rem;
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Small shadow */
-            border: 1px solid #d1d5db; /* Subtle border */
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            border: 1px solid #d1d5db;
             display: flex;
             flex-direction: column;
         }
@@ -170,21 +164,21 @@
         .technical-skills .skill-category-title {
             font-weight: bold;
             color: var(--primary-dark);
-            margin-bottom: 0.5rem; /* Space below title */
-            font-size: 1rem; /* Reduced font size */
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
 
         .technical-skills .skill-list-items {
-            color: #374151; /* gray-700 */
-            font-size: 0.9rem; /* Slightly smaller text for list items */
-            line-height: 1.4; /* Adjusted line height */
+            color: #374151; 
+            font-size: 0.9rem; 
+            line-height: 1.4; 
         }
 
 
          .education-entry {
-            margin-bottom: 0.5rem; /* Reduced margin */
-            padding-bottom: 0.5rem; /* Reduced padding */
-            border-bottom: 1px solid #d1d5db; /* gray-300 */
+            margin-bottom: 0.5rem; 
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #d1d5db;
         }
 
         .education-entry:last-child {
@@ -194,42 +188,39 @@
         }
 
         .degree {
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* semibold */
-            margin-bottom: 0.1rem; /* Reduced margin */
+            font-size: 1.125rem; 
+            font-weight: 600; 
+            margin-bottom: 0.1rem; 
         }
 
-        /* Reusing company-info for university details for consistent styling */
         .university-info {
              font-size: 1rem;
-            color: #4b5563; /* gray-600 */
-            margin-bottom: 0.5rem; /* Reduced margin */
+            color: #4b5563;
+            margin-bottom: 0.5rem;
         }
 
-        /* Specific style for italic and smaller text */
         .text-sm-italic {
-            font-size: 0.875rem; /* text-sm */
+            font-size: 0.875rem;
             font-style: italic;
         }
 
-        /* New class for education details content to match previous experience list item font */
         .education-detail-text {
-            font-size: 0.875rem; /* text-sm from previous-experience-details li */
-            color: #374151; /* gray-700 from previous-experience-details li */
-            margin-top: 0.25rem; /* Small spacing */
-            margin-bottom: 0.25rem; /* Small spacing */
+            font-size: 0.875rem; 
+            color: #374151;
+            margin-top: 0.25rem; 
+            margin-bottom: 0.25rem;
         }
 
 
          .previous-experience-summary {
             margin-bottom: 1.5rem;
-            color: #374151; /* gray-700 */
+            color: #374151;
          }
 
          .previous-experience-entry {
             margin-bottom: 1rem;
             padding-bottom: 1rem;
-            border-bottom: 1px solid #d1d5db; /* gray-300 */
+            border-bottom: 1px solid #d1d5db;
          }
 
          .previous-experience-entry:last-child {
@@ -240,55 +231,53 @@
 
          .previous-job-title {
              font-size: 1rem;
-            font-weight: 600; /* semibold */
+            font-weight: 600;
             margin-bottom: 0.25rem;
          }
 
          .previous-company-info {
-             font-size: 0.875rem; /* text-sm */
-            color: #4b5563; /* gray-600 */
+             font-size: 0.875rem;
+            color: #4b5563;
             margin-bottom: 0.5rem;
          }
 
          .previous-experience-details ul {
             list-style: disc;
-            margin-left: 1.25rem; /* pl-5 */
-            color: #374151; /* gray-700 */
-            font-size: 0.875rem; /* text-sm */
+            margin-left: 1.25rem;
+            color: #374151;
+            font-size: 0.875rem;
          }
 
          .previous-experience-details li {
             margin-bottom: 0.3rem;
          }
 
-         /* Header layout using flexbox */
          .resume-header {
             display: flex;
-            flex-direction: column; /* Stack items vertically on small screens */
-            align-items: center; /* Center align items */
-            margin-bottom: 1.5rem; /* Adjusted margin */
-            padding: 0 1.5rem; /* Consistent horizontal padding with sections */
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 0 1.5rem;
          }
 
-         /* Contact Section Styling - Updated for icons and text */
          .contact-section .contact-items-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Default to single column */
-            gap: 0.75rem; /* Space between contact items */
-            justify-items: center; /* Center items horizontally */
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            justify-items: center;
          }
 
          .contact-section .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.75rem; /* Space between icon and text */
-            color: var(--primary-dark); /* Default text color */
+            gap: 0.75rem;
+            color: var(--primary-dark);
             font-size: 1rem;
-            text-align: center; /* Center text within item */
+            text-align: center;
          }
 
          .contact-section .contact-item a {
-            color: var(--secondary-accent); /* Blue link color */
+            color: var(--secondary-accent);
             text-decoration: none;
             transition: text-decoration 0.3s ease;
          }
@@ -298,33 +287,29 @@
          }
 
          .contact-section .contact-item svg {
-            width: 1.25rem; /* Icon size */
+            width: 1.25rem;
             height: 1.25rem;
-            fill: currentColor; /* Inherit color from parent */
-            flex-shrink: 0; /* Prevent icon from shrinking */
+            fill: currentColor;
+            flex-shrink: 0;
          }
 
-         /* Adjust grid for larger screens */
-         @media (min-width: 640px) { /* Tailwind's sm breakpoint */
+         @media (min-width: 640px) {
             .contact-section .contact-items-grid {
-                grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
-                gap: 1rem 2rem; /* Row gap, column gap */
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 1rem 2rem; 
             }
             .contact-section .contact-item {
-                justify-content: flex-start; /* Align items to start in columns */
+                justify-content: flex-start;
             }
          }
 
 
-        /* Print specific styles */
-        /* Define US‑Letter, portrait, with 0.5” margins */
         @page {
             size: letter portrait;
             margin: 0.5in;
         }
 
         @media print {
-            /* Reset overall page */
             html, body {
                 margin: 0;
                 padding: 0;
@@ -335,7 +320,6 @@
                 -webkit-print-color-adjust: exact;
             }
 
-            /* Resume container takes full printable width */
             .resume-container {
                 width: 100% !important;
                 max-width: none !important;
@@ -345,15 +329,13 @@
                 border-radius: 0 !important;
             }
 
-            /* Simplify section spacing */
             .section {
                 background: #fff !important;
                 box-shadow: none !important;
-                padding: 0.1em 0 !important; /* Reduced padding */
-                margin: 0.1em 0 !important; /* Reduced margin */
+                padding: 0.1em 0 !important;
+                margin: 0.1em 0 !important;
             }
 
-            /* Prevent awkward breaks */
             header, h1, h2,
             .experience-entry,
             .education-entry,
@@ -363,170 +345,160 @@
                 page-break-inside: avoid !important;
             }
 
-            /* Shrink text more aggressively to force one‑page fit */
             body * {
-                font-size: 0.85em !important; /* More aggressive font size reduction */
-                line-height: 1.05 !important; /* Tighter line height for all text */
+                font-size: 0.85em !important;
+                line-height: 1.05 !important;
             }
 
-            /* Specific font size adjustments for print */
-            h1 { font-size: 1.8em !important; } /* Relative to body font size */
+            h1 { font-size: 1.8em !important; }
             h2 { font-size: 1.4em !important; }
             .job-title, .degree, .previous-job-title { font-size: 1.1em !important; }
             .company-info, .university-info, .previous-company-info { font-size: 0.9em !important; }
             .summary-text, .experience-details li, .previous-experience-details li,
             .skill-list-items, .contact-item {
-                font-size: 0.9em !important; /* Adjust base text size */
+                font-size: 0.9em !important;
             }
             .technical-skills .skill-category-title { font-size: 1em !important; }
 
-            /* Core Competencies specific print styles */
             .core-competencies li {
                 background-color: transparent !important;
                 padding: 0 !important;
                 box-shadow: none !important;
                 border: none !important;
-                margin-bottom: 0.05em !important; /* Very small spacing */
+                margin-bottom: 0.05em !important;
             }
 
-            /* Key Achievements specific print styles */
             .achievements ul {
                 display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important; /* 2 columns */
-                gap: 0.5em !important; /* Gap between columns */
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.5em !important;
             }
             .achievements li {
-                margin-bottom: 0.1em !important; /* Reduce margin for achievement items */
-                padding: 0.1em !important; /* Add some padding back for visual separation in grid */
-                border: 0.5px solid #eee !important; /* Subtle border for grid items */
-                border-radius: 0.2em !important; /* Small rounded corners */
+                margin-bottom: 0.1em !important; 
+                padding: 0.1em !important;
+                border: 0.5px solid #eee !important;
+                border-radius: 0.2em !important;
             }
 
 
-            /* Technical Skills specific print styles */
             .technical-skills .skills-grid {
-                display: grid !important; /* Re-enable grid for columns */
-                grid-template-columns: repeat(2, 1fr) !important; /* Two columns */
-                gap: 0.5em !important; /* Reduced gap between columns */
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.5em !important;
             }
             .technical-skills .skill-card {
                 background-color: transparent !important;
                 padding: 0 !important;
                 box-shadow: none !important;
                 border: none !important;
-                margin-bottom: 0.1em !important; /* Reduce space between each skill category */
+                margin-bottom: 0.1em !important;
             }
             .technical-skills .skill-category-title {
-                margin-bottom: 0.05em !important; /* Reduce space after title */
-                font-size: 1em !important; /* Relative to body font size */
+                margin-bottom: 0.05em !important;
+                font-size: 1em !important;
             }
             .technical-skills .skill-list-items {
-                margin-top: 0.05em !important; /* Reduce space before list items */
-                font-size: 0.9em !important; /* Smaller text for the list */
-                line-height: 1.1em !important; /* Ensure tight line height for skill items */
+                margin-top: 0.05em !important;
+                font-size: 0.9em !important; 
+                line-height: 1.1em !important;
             }
 
 
-            /* Professional Experience section specific print styles */
             .section:has(h2:contains("Professional Experience")) {
-                margin-top: 0.2in !important; /* Extra top margin for print */
-                margin-bottom: 0.2in !important; /* Extra bottom margin for print */
+                margin-top: 0.2in !important;
+                margin-bottom: 0.2in !important;
             }
             .experience-entry {
-                margin-bottom: 0.1em !important; /* Reduced margin */
-                padding-bottom: 0.1em !important; /* Reduced padding */
+                margin-bottom: 0.1em !important;
+                padding-bottom: 0.1em !important;
             }
             .experience-entry:last-child {
                 margin-bottom: 0 !important;
                 padding-bottom: 0 !important;
             }
             .job-title {
-                margin-bottom: 0.05em !important; /* Reduced margin */
-                line-height: 1.1em !important; /* Tighter line height */
+                margin-bottom: 0.05em !important;
+                line-height: 1.1em !important;
             }
             .company-info {
-                margin-bottom: 0.05em !important; /* Reduced margin */
-                line-height: 1.05em !important; /* Tighter line height */
+                margin-bottom: 0.05em !important;
+                line-height: 1.05em !important;
             }
             .experience-details ul {
-                margin-left: 0.8em !important; /* Reduced left margin for lists */
+                margin-left: 0.8em !important;
             }
             .experience-details li {
-                margin-bottom: 0.02em !important; /* Made list items very dense */
-                padding: 0.02em 0 !important; /* Reduced padding for list items */
+                margin-bottom: 0.02em !important;
+                padding: 0.02em 0 !important;
             }
 
-            /* Education section specific print styles */
             .section:has(h2:contains("Education")) {
-                page-break-before: always !important; /* Force page break before Education section */
+                page-break-before: always !important;
             }
             .education-entry {
-                margin-bottom: 0.1em !important; /* Reduced margin */
-                padding-bottom: 0.1em !important; /* Reduced padding */
+                margin-bottom: 0.1em !important;
+                padding-bottom: 0.1em !important;
             }
             .education-entry:last-child {
-                border-bottom: none !important; /* Remove border for the last entry */
+                border-bottom: none !important;
                 margin-bottom: 0 !important;
                 padding-bottom: 0 !important;
             }
             .university-info {
-                margin-bottom: 0.05em !important; /* Reduced margin */
-                line-height: 1.05em !important; /* Tighter line height */
+                margin-bottom: 0.05em !important;
+                line-height: 1.05em !important;
             }
             .text-sm-italic {
-                font-size: 0.8em !important; /* Even smaller for print */
+                font-size: 0.8em !important;
             }
             .education-detail-text {
-                font-size: 0.8em !important; /* Match previous-experience-details li for print */
+                font-size: 0.8em !important;
                 line-height: 1.05em !important;
                 margin-top: 0.05em !important;
                 margin-bottom: 0.05em !important;
             }
 
 
-            /* Previous Experience section specific print styles */
             .previous-experience-summary {
-                margin-bottom: 0.5em !important; /* Tighten up the paragraph itself */
-                line-height: 1.1em !important; /* Tighter line height for summary paragraph */
+                margin-bottom: 0.5em !important;
+                line-height: 1.1em !important;
             }
             .previous-experience-entry {
-                margin-bottom: 0.05em !important; /* Further reduced margin */
-                padding-bottom: 0.05em !important; /* Further reduced padding */
-                border-bottom: none !important; /* Remove border for previous experience entries */
+                margin-bottom: 0.05em !important;
+                padding-bottom: 0.05em !important;
+                border-bottom: none !important;
             }
             .previous-experience-entry:last-child {
                 margin-bottom: 0 !important;
                 padding-bottom: 0 !important;
             }
             .previous-job-title {
-                margin-bottom: 0.02em !important; /* Further reduced margin */
-                line-height: 1.05em !important; /* Tighter line height */
+                margin-bottom: 0.02em !important;
+                line-height: 1.05em !important;
             }
             .previous-company-info {
-                margin-bottom: 0.02em !important; /* Further reduced margin */
-                line-height: 1.05em !important; /* Tighter line height */
+                margin-bottom: 0.02em !important;
+                line-height: 1.05em !important;
             }
             .previous-experience-details ul {
-                margin-left: 0.8em !important; /* Reduced left margin for lists */
+                margin-left: 0.8em !important;
             }
             .previous-experience-details li {
-                margin-bottom: 0.01em !important; /* Made list items very dense */
-                padding: 0.01em 0 !important; /* Reduced padding for list items */
+                margin-bottom: 0.01em !important;
+                padding: 0.01em 0 !important;
             }
 
 
-            /* Hide UI elements you don’t want printed */
             .print-button,
             .back-button {
                 display: none !important;
             }
         }
 
-        /* Back button styling */
         .back-button {
-            display: flex; /* Make it a flex container */
-            align-items: center; /* Vertically align icon and text */
-            gap: 0.25rem; /* Space between icon and text */
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
             color: var(--secondary-accent);
             text-decoration: none;
             font-weight: 600;
@@ -541,9 +513,9 @@
         }
 
         .back-button svg {
-            width: 1rem; /* Adjust icon size */
+            width: 1rem;
             height: 1rem;
-            fill: currentColor; /* Inherit color from parent */
+            fill: currentColor;
         }
     </style>
 </head>
@@ -551,7 +523,7 @@
 
     <div class="resume-container">
         <header class="resume-header">
-            <h1 class="text-4xl">Thomas Loftus III</h1>
+            <h1 class="text-4xl">Thomas Loftus </h1>
         </header>
 
 
